@@ -1,1 +1,0 @@
-[booking_items_admin]

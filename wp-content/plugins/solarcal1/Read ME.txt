@@ -1,7 +1,0 @@
-***************************************************
-For php pages
-<?php echo ssc_shortcode( $solar_cal_content ) ?>
-
-***************************************************
-For textfield shortcode
-[solar_cal_content]
