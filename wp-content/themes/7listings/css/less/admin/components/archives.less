@@ -1,0 +1,247 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// ARCHIVES - ADMIN
+// last edit: 5.5
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+//	CONTENTS
+// -----------------------
+// - ROW HOVER
+// ACCOMM, TOUR & RENTAL
+// - COLUMN WIDTHS
+// - CUSTOMIZATION
+// BOOKINGS REPORTS
+// - REVENUE OVERVIEW
+// - COLUMN WIDTHS
+// - CUSTOMIZATION
+// - HIDE WP SEO COLUMNS IN BOOKING REPORTS
+// - EMAIL TO CUSTOM ADDRESS POPUP
+// -----------------------
+
+
+
+// ROW HOVER
+// --------------------------------------------------
+.wp-list-table #the-list .type-booking:hover,
+.wp-list-table #the-list .type-tour:hover,
+.wp-list-table #the-list .type-accommodation:hover {.row-highlight;}
+
+
+
+
+// --------------------------------------------------
+// TOUR BUNDLES
+// --------------------------------------------------
+.wp-list-table {
+	tr.tour.tour-bundle {
+		.type.column-type:after {
+			//content: "\f16b";
+			content: "\f509";
+			//font-family: "FontAwesome";
+			font-family: "dashicons";
+			display: block;
+			font-size: 1.2em;
+			color: rgba(0,0,0,.4);
+		}
+	}
+}
+
+
+
+// --------------------------------------------------
+// ACCOMM, TOUR & RENTAL
+// --------------------------------------------------
+
+// COLUMN WIDTHS
+// --------------------------------------------------
+.wp-list-table.widefat {
+	.check-column						{min-width: 24px; width: 24px }
+	.type-product .check-column,
+	.type-slideshow .check-column		{min-width: 32px; width: 32px }
+
+	.column-title 						{min-width:180px;/* width: 22%;*/}
+	#type, .column-type 				{min-width:140px; width: 16%;}
+	#stars, .column-stars 				{				  width: 92px;} // ACCOMMODATION ONLY
+	#price, .column-price 				{min-width: 80px; width: 6%; 						border-left: 1px solid rgba(0,0,0,.05) !important;}
+	#allocation, .column-allocation 	{min-width: 40px; width: 4%; 	text-align: center;}
+
+	#state, .state,
+	#city, .city						{min-width: 60px; width: 12%; }
+
+	#leads, .column-leads,
+	#account, .column-account,
+	#featured, .column-featured 		{/*min-width: 66px;*/ width: 60px; 	text-align: center;}
+
+	#users, .column-users 				{min-width: 80px; width: 9%;}
+	#date								{ 				  width: 86px;}
+	.column-date 						{				  width: 86px; font-size: .8em; }
+
+
+	#broadcasted, .column-broadcasted 	{				  width: 42px; 	text-align: center; border-left: 1px solid rgba(0,0,0,.05) !important;}
+}
+.wp-list-table {
+	&.accommodations,
+	&.tours,
+	&.rentals,
+	&.companys {
+		#image.column-image,  	{min-width: 36px; width: 36px;	text-align: center;}
+	}
+}
+
+
+
+// CUSTOMIZATION
+// --------------------------------------------------
+
+// THUMBNAIL
+.manage-column.column-image 		{font-size: 0;} // HIDE HEADER TITLE
+.column-image img 					{.thumb (46px, 46px, 0);}
+
+// LISTING TITLE
+.column-title > strong 				{margin: 4px 0 0 0;}
+
+// STAR, REVIEW RATING
+.column-rating i,
+.column-stars i {
+	font-size: 1.2em;
+	color: #ffbd5c;
+	width: 1em;
+}
+
+.manage-column.column-allocation {font-size: 9px; text-align: center;}
+
+
+// FEATURED
+.manage-column {
+	&.column-leads,
+	&.column-account,
+	&.column-featured {
+		> a > span {
+			font-size: 9px;
+		}
+	}
+}
+
+.featured {
+	span {
+		cursor: pointer;
+		color: #999;
+	}
+	.star {
+		font-size: 1.2em;
+		color: #ffbd5c;
+	}
+	.featured {
+		color: #090;
+		font-size: 1.8em;
+		margin-left: -5px;
+	}
+}
+
+
+
+
+// BROADCAST COLUMN
+// ---------------------------------------
+.manage-column.column-broadcasted {
+	font-size: 9px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+.broadcasted .broadcast_find_orphans {
+	font-size: 9px;
+	display: block;
+	width: 60px;
+	margin: 0 -10px;
+	float: right;
+	z-index:999;
+	position: absolute;
+	background: #FFF;
+	text-align: right;
+}
+
+
+
+
+
+
+// ---------------------------------------
+// QUICKEDIT customisations
+// ---------------------------------------
+.cat-checklist li label {
+	margin: 0;
+}
+.inline-edit-accommodation {
+	.type-checklist,
+	.stars-checklist,
+	.amenity-checklist {
+		height: 72px;
+	}
+	
+	.sl-shared-sites {
+		min-height: 390px;
+	}
+}
+
+.inline-edit-tour {
+	.features-checklist {
+		height: 72px;
+	}
+	.sl-shared-sites {
+		min-height: 374px;
+	}
+}
+
+.inline-edit-rental {
+	.feature-checklist {
+		height: 72px;
+	}
+	.sl-shared-sites {
+		min-height: 374px;
+	}
+}
+
+.inline-edit-attraction {
+	.attraction_feature-checklist {
+		height: 72px;
+	}
+	.sl-shared-sites {
+		min-height: 374px;
+	}
+}
+
+.inline-edit-company {
+	.brand-checklist,
+	.company_product-checklist,
+	.company_service-checklist {
+		height: 72px;
+	}
+	.sl-shared-sites {
+		min-height: 390px;
+	}
+	
+}
+
+.inline-edit-product {
+	.sl-shared-sites {
+		height: 342px;
+	}
+}
+
+
+// QUICKEDIT SHARED SITES
+// requires sharing plugin
+// ---------------------------------------
+.inline-edit-col .cat-checklist.sl-shared-sites {
+	li {
+		float: left;
+		width: 50%;
+	}
+}
+
+.inline-edit-group select {
+	width: auto;
+}

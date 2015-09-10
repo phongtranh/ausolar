@@ -1,0 +1,526 @@
+/*#adminmenu #toplevel_page_7company-history .wp-menu-image:before,
+#adminmenu #toplevel_page_leads .wp-menu-image:before {
+	font-family: '7listings-icons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	content: "\e600";
+}*/
+#adminmenu #toplevel_page_7company-history .wp-menu-image:before 	{ content: "\f164"; } /*// "\f238"; */
+#adminmenu #toplevel_page_leads .wp-menu-image:before 				{ content: "\f239"; }
+#adminmenu .form-leads .wp-menu-image:before 						{ content: "\f163"; font-size: 1.25em!important; }
+#adminmenu .rejections .wp-menu-image:before 						{ content: "\f117"; }
+#adminmenu .menu-icon-testimonial .wp-menu-image:before 			{ content: "\f338"; }
+#adminmenu #menu-posts-shortcodepro .wp-menu-image:before 			{ content: "[ ]"; font-size: 18px; margin-top: -4px; font-weight: 900; }
+
+input.multi.days { width: 85px!important; }
+
+.row-actions .delete, .row-actions .trash, #move-comment-button{
+	display: none;
+}
+
+.spinner {
+	background: url('/wp-admin/images/wpspin_light.gif') no-repeat;
+	background-size: 16px 16px;
+	display: none;
+	float: right;
+	opacity: .7;
+	filter: alpha(opacity=70);
+	width: 16px;
+	height: 16px;
+	margin: 5px 5px 0;
+}
+
+.stop,
+.suspended,
+.max-reached,
+.buying {
+	padding: 2px 6px;
+	word-wrap: normal;
+	border-radius: 99px;
+	min-width: 10px;
+	height: 18px;
+	line-height: 18px;
+	display: inline-block;
+
+	color: #FFF;
+	text-shadow: 0 1px 1px rgba(0,0,0,.4);
+	box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);
+}
+.stop {
+	background: red;
+
+}
+.suspended {
+	background: orange;
+}
+.max-reached {
+	background: yellow;
+	color: #333;
+}
+.buying {
+	background: green;
+}
+
+#leads {
+	width: 68px;
+	text-align: right;
+}
+
+#lead-price {
+	width: 42px;
+	text-align: right;
+}
+#service-radius {
+	width: 68px;
+	text-align: right;
+}
+
+.stat-info p {
+clear: both;
+}
+
+
+.update-core-php .upgrade > p > #upgrade {
+	display: none;
+}
+
+section.section label{
+	display: block;
+}
+
+/*// ---------------------------------------------
+// 7 HISTORY
+// ---------------------------------------------
+*/
+
+
+#leads.data-grid {
+	width: 100%;
+	text-align: left;
+}
+
+#leads.data-grid .header {
+	border-top: 1px solid rgba(0,0,0,.15);
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	padding: 10px;
+	background: rgba(0,0,0,.05);
+	min-height: 18px;
+}
+#leads .row {
+	margin-left: 0!important;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	padding: 10px;
+	color: rgba(0,0,0,.5);
+	font-size: .9em;
+	clear: both;
+	overflow: hidden;
+}
+
+
+#leads.data-grid .row:before,
+#leads.data-grid .row:after {
+	content: "";
+	display: table;
+}
+#leads.data-grid .row:after { clear: both;}
+#leads.data-grid .row 		{ *zoom: 1;}
+
+#leads.data-grid .row:nth-child(2n+2) {
+	background: rgba(0,0,0,.025);
+}
+#leads.data-grid .row:hover,
+#leads.data-grid .row:hover .detail { color: rgba(0,0,0,.9); }
+
+#leads.data-grid .row.rejected {
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+}
+#leads.data-grid .row.rejected a,
+#leads.data-grid .row.rejected .label,
+#leads.data-grid .row.rejected .detail {
+	color: #b94a48;
+}
+#leads.data-grid .row.rejected .source > span {
+	opacity: .5;
+}
+
+#leads.data-grid .row.rejected:after {
+	font-family: FontAwesome;
+	margin:0;
+	font-size: 2.75em;
+	position: relative;
+	top: -.8em;
+	margin-bottom: -.7em;
+}
+.duplicate:after 	{ content:"\f0c5"!important; }
+.no-contact:after	{ content:"\f098"!important; }
+.service-area:after	{ content:"\f041"!important; }
+.other:after		{ content:"\f059"!important; }
+
+#leads div > div {
+	display: inline-block;
+}
+
+#leads.data-grid .id {
+	display: inline-block;
+	width: 40px;
+	float: left;
+}
+#leads.data-grid .id > a {
+	text-decoration: none;
+}
+#leads.data-grid .date {
+	display: inline-block;
+	width: 120px;
+	float: left;
+}
+#leads .source {
+	float: left;
+	display: inline-block;
+	width: 80px;
+}
+
+.asq-website,
+.asq-internal,
+.energy-smart,
+.asq-phone,
+
+#leads .source > .asq-website,
+#leads .source > .asq-internal,
+#leads .source > .energy-smart,
+#leads .source > .asq-phone {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background-image: url(data:image/gif;base64,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);
+}
+.asq-website,
+#leads .source > .asq-website {
+	background-position: left top;
+}
+.asq-internal,
+#leads .source > .asq-internal {
+	background-position: right top;
+}
+.asq-phone,
+#leads .source > .asq-phone {
+	background-position: left bottom;
+}
+.energy-smart,
+#leads .source > .energy-smart {
+	background-position: right bottom;
+}
+
+.icon.solar-lead-factory {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/solar-lead-factory.gif') no-repeat;
+}
+
+.icon.exclusive-leads {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/exclusive-leads.gif') no-repeat;
+}
+
+.icon.your-solar-quotes {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/your-solar-quotes.jpg') no-repeat;
+}
+.icon.jack-media {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/jack-media.gif') no-repeat;
+}
+
+.icon.solar-leads {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/solar-leads.png') no-repeat;
+}
+
+.icon.ocere {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/ocere.png') no-repeat;
+}
+
+.icon.green-utilities {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/green-utilities.png') no-repeat;
+}
+
+.icon.solar-power-today {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/solar-power-today.png') no-repeat;
+}
+
+.icon.cleantechnia {
+	width: 48px;
+	height: 48px;
+	display: block;
+	text-indent: -9999em;
+	margin-left: -2px;
+	background: url('../images/admin/cleantechnia.png') no-repeat;
+}
+
+#leads .name {
+	display: inline-block;
+	width: 10%;
+	float: left;
+	min-width: 140px;
+}
+#leads > .row > .name {
+	font-weight: bold;
+}
+#leads .contact {
+	display: inline-block;
+	width: 260px;
+	float: left;
+}
+#leads .address {
+	width: 220px;
+	float: left;
+}
+#leads .request {
+	width: 280px;
+	float: left;
+}
+#leads .company {
+	width: 14%;
+	min-width: 220px;
+}
+#leads .company > a {
+	text-decoration: none;
+}
+#leads .company > a.rejected {
+	color: #b94a48;
+}
+#leads .company > a.rejected:after {
+	font-family: FontAwesome;
+	margin-left: .5em;
+	font-size: 1.3em;
+	position: relative;
+	bottom: -.05em;
+}
+
+#leads > .row > div.company {
+	/*font-size: 1.2em;*/
+	font-weight: bold;
+	/*height: 5.8em;
+	overflow: hidden;*/
+}
+#leads .company > a > span {
+	width: 12px;
+	height: 12px;
+	margin: 0 .4em -2px 0;
+}
+#leads .company .member-none:before {
+	font-size: 10px;
+	top: -4px;
+	left: 3px;
+}
+#leads .recipients {
+	word-break: break-word;
+	width: 15%;
+}
+
+#leads .data {
+	width: 24%;
+	display: inline-block;
+	white-space: pre-line;
+	word-break: break-word;
+	font-size: .9em;
+
+	display: none;
+}
+
+#leads.data-grid .label {
+	background: none;
+	color: rgba(0,0,0,.4);
+	text-shadow: none;
+	font-weight: normal;
+	padding: 0;
+	width: 80px;
+	display: inline-block;
+}
+#leads.data-grid .detail {
+		font-weight: bold;
+		color: rgba(0,0,0,.6);
+}
+
+@media (max-width: 480px) 	{
+
+	.date 	{ width: 35%; }
+	.type 	{ width: 25%; clear: left; font-size: .85em; }
+	.action { width: 22%; font-size: .85em; }
+	.description 			{ width: 52%; }
+	.header .description 	{ min-height: 38px; }
+}
+
+
+.tablenav .actions select {
+	width: auto;
+}
+
+.span1{
+	display: inline-block;
+	width: 7%;
+}
+.span2 {
+	float: lef;
+	display: inline-block;
+	width: 10%;
+}
+.rejections-breakdown .span2 > span:after {
+	font-family: FontAwesome;
+	margin:0;
+	font-size: 2em;
+	position: relative;
+	margin-right: .25em;
+}
+
+.chart-container {
+	width: 70%;
+	display: inline-block;
+	margin: .5em 0 -.5em 0;
+}
+.bar-chart {
+	height: 22px;
+	display: block;
+	border-radius: 2px;
+	overflow: visible;
+}
+
+.bar-chart > .part {
+	display: inline-table;
+	height: 100%;
+	float: left;
+}
+
+.bar-chart > .part:hover {
+	cursor: help;
+}
+
+.part.website 		{ background: #666666; }
+.part.internal 		{ background: #666666; }
+.part.callback      { background: #adadad; }
+.part.phone 		{ background: #FFCC00; }
+.part.energysmart 	{ background: #20AC53; }
+.part.your-solar-quotes { background: #3498DB; }
+.part.solar-lead-factory { background: #c00; }
+.part.exclusive-leads { background: #DD6A00; }
+.part.solar-leads { background: #0980B9; }
+.part.jack-media { background: blue; }
+.part.ocere { background: #7624a5; }
+.part.green-utilities { background: #5e7642; }
+.part.solar-power-today { background: #ff5e00; }
+.part.cleantechnia { background: #ff5e00; }
+
+.rejections-breakdown .no-contact:after	{ color: #b94a48; }
+.rejections-breakdown .service-area:after{ color: #E26464; }
+.rejections-breakdown .duplicate:after 	{ color: #FF9999; }
+.rejections-breakdown .other:after		{ color: #FF0000; }
+
+.part.bar-no-contact 		{ background: #b94a48; }
+.part.bar-service-area 		{ background: #E26464; }
+.part.bar-duplicate 		{ background: #FF9999; }
+.part.bar-other 			{ background: #FF0000; }
+
+.span6 section .label a {
+	text-decoration: none;
+}
+
+
+.act { color: #FCD116; }
+.nsw { color: #7ec0ee; }
+.nt { color: #F5C52C; }
+.qld { color: #800000; }
+.tas { color: #106604; } /*#092E20; }*/
+.vic { color: #000080; }
+.sa { color: red; }
+.wa { color: #000; }
+
+
+.bar-total {
+	font-size: .75em;
+	font-weight: bold;
+	top: -3px;
+	position: relative;
+}
+
+/*------ SINGLE COMPANY REPORT ----------*/
+#wpbody-content > div.wrap > h2 > span[class*="member"] {
+	margin: 0 .4em -4px 0;
+	width: 24px;
+	height: 24px;
+}
+
+/* Chart */
+#chart-states {
+	height: 420px;
+}
+
+/*-- Wholesale report added by Tan Nguyen **/
+#leads .state{
+	width: 80px;
+	float: left;
+}
+
+#leads .count{
+	width: 100px;
+	float: left;
+}
+
+/*-- CRM --*/
+.modal-content .span5{
+    width: 40%;
+    margin-right: 2%;
+    float: left;
+}
+
+.modal-content .span7{
+    width: 56%;
+    float: right;
+}
+
+#company-meta-box p label{
+	display: block;
+}

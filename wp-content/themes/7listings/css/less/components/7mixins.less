@@ -1,0 +1,454 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// 7 LISTINGS MIXINS
+// last edit: 5.8.2
+// --------------------------------------------------
+// --------------------------------------------------
+
+// FONT MIXINS
+
+.heading() {
+	font-family: HeadingNormal, "Gill Sans", "Trebuchet MS", Calibri, sans-serif;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: -0.05em;
+}
+.heading-bold() {
+	font-family: HeadingBold, "Gill Sans", "Trebuchet MS", Calibri, sans-serif;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: -0.05em;
+}
+
+.text-shadow-emboss ( @tse-color: @emboss) {
+	text-shadow: 0 @border-size 0 @tse-color;
+}
+.text-shadow-high ( @tsh-color: @shadow) {
+	text-shadow: 0 @border-size 0 @tsh-color;
+}
+
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+  		  border-radius: @radius;
+}
+
+
+.seven-logo (@x: 0, @y: 0) {
+	background: url("@{seven-sprite}") no-repeat @x @y;
+}
+
+
+// TITLE EFFECTS FOR CUSTOM DESIGN
+// --------------------------------------------------
+.title-shadow-none() 						{ text-shadow: none;}
+.title-shadow ( @tsh-color: @shadow) 		{ text-shadow: 0 1px 1px @tsh-color;}
+.title-shadow-emboss ( @tse-color: @emboss) { text-shadow: 0 1px 0 @tse-color;}
+
+
+.appearance(@property: none) {
+	-webkit-appearance: @property;
+	   -moz-appearance: @property;
+	   	 -o-appearance: @property;
+	   	 	appearance: @property;
+}
+
+// --------------------------------------------------
+// Guards
+// --------------------------------------------------
+
+
+
+// text-shadow based on text colour
+// -------------------------------------------------------------
+.textguard(@text) when (lightness(@text) < 50%) 	{ text-shadow: 0 1px 0 rgba(255,255,255,.1); }
+.textguard(@text) when (lightness(@text) >= 50%) 	{ text-shadow: 0 1px 1px rgba(0,0,0,.1); }
+
+// text-shadow based on text and background colour
+// -------------------------------------------------------------
+.textguard(@text,@background) when (lightness(@text) < lightness(@background)) { text-shadow: 0 1px 0 rgba(255,255,255,.1); }
+.textguard(@text,@background) when (lightness(@text) > lightness(@background)) { text-shadow: 0 1px 1px rgba(0,0,0,.2); }
+
+
+
+// box-shadow based on object color
+// -------------------------------------------------------------
+.boxguard(@base) when (lightness(@base) < 50%) 		{ .box-shadow(0 1px 0 rgba(255,255,255,.25)); }
+.boxguard(@base) when (lightness(@base) >= 50%) 	{ .box-shadow(0 2px 2px -1px rgba(0,0,0,.2)); }
+
+// box-shadow based on object and background colour
+// -------------------------------------------------------------
+.boxguard(@base,@background) when (lightness(@base) > lightness(@background)) { 
+	.box-shadow(0 1px 0 rgba(255,255,255,.1)); 
+}
+.boxguard(@base,@background) when (lightness(@base) < lightness(@background)) { 
+	.box-shadow(0 2px 2px -1px rgba(0,0,0,.2)); 
+}
+
+
+
+// background-color based on background-color
+// -------------------------------------------------------------
+.backgroundColorGuard(@background) when (lightness(@background) < 40%) {
+	background-color: rgba(255,255,255,.5);
+}
+.backgroundColorGuard(@background) when (lightness(@background) >= 40%) {
+	background-color: rgba(0,0,0,.075);	
+}
+
+
+// make thumbnails use border-radius when thumbnail have no border
+// -------------------------------------------------------------
+//.thumbnailGuard(@border-width) when (@border-width < 1) 	{ border-radius:@baseBorderRadius; }
+//.thumbnailGuard(@border-width) when (@border-width >= 1) 	{ border-radius:@thumbnailBorderWidth; }
+.thumbnailGuard(@borderWidth,@baseRadius) when (@borderWidth >= @baseRadius)	{ .border-radius(@thumbnailBorderWidth); }
+.thumbnailGuard(@borderWidth,@baseRadius) when (@borderWidth < @baseRadius)		{ .border-radius(@baseBorderRadius); }
+
+// limit max radius
+// -------------------------------------------------------------
+
+// GUARDS
+// radius & max-radius
+.maxRadiusGuard(@radiusInput,@maxRadius) when (@radiusInput >= @maxRadius) { 
+	.border-radius(@maxRadius); 
+}
+.maxRadiusGuard(@radiusInput,@maxRadius) when (@radiusInput < @maxRadius) { 
+	.border-radius(@radiusInput); 
+}
+// radius & max-radius & output-radius
+.maxRadiusGuardOuput(@radiusInput,@maxRadius,@outputRadius) when (@radiusInput >= @maxRadius) { 
+	.border-radius(@outputRadius); 
+}
+.maxRadiusGuardOuput(@radiusInput,@maxRadius,@outputRadius) when (@radiusInput < @maxRadius) { 
+	.border-radius(@radiusInput); 
+}
+
+// MIXINS
+.max-radius(@maxRadius) {
+  .maxRadiusGuard(@baseBorderRadius,@maxRadius);
+}
+.border-radius-max(@maxRadius) {
+  .maxRadiusGuard(@baseBorderRadius,@maxRadius);
+}
+.border-radius-input-max(@radius,@maxRadius) {
+  .maxRadiusGuard(@radius,@maxRadius);
+}
+.border-radius-input-max-putput(@radius,@maxRadius,@outputRadius) {
+  .maxRadiusGuardOuput(@radius,@maxRadius,@outputRadius);
+}
+
+
+.maxIndentGuard(@radiusInput,@maxPaddingLeft) when (@radiusInput > @maxPaddingLeft) {
+  padding-left:0;
+  text-align: center;
+}
+
+.max-indent(@maxPaddingLeft) {
+  .maxIndentGuard(@baseBorderRadius,@maxPaddingLeft);
+}
+.max-indent(@input,@maxPaddingLeft) {
+  .maxIndentGuard(@input,@maxPaddingLeft);
+}
+
+
+
+.maxIndentGuardLeft(@radiusInput,@maxPaddingLeft) when (@radiusInput >= @maxPaddingLeft) {
+  padding-left: @maxPaddingLeft;
+}
+/*
+.maxIndentGuardLeft(@radiusInput,@maxRadius) when (@radiusInput < @maxRadius) {
+  padding-left: @radiusInput;
+}*/
+.max-indent-left(@maxIndent) {
+  .maxIndentGuardLeft(@baseBorderRadius,@maxIndent);
+}
+
+.forceIndentGuard(@radiusInput,@maxRadius) when (@radiusInput > @maxRadius) {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.force-indent(@radius) {
+  .forceIndentGuard(@baseBorderRadius,@radius);
+}
+
+
+// Remove sidebar padding when sidebarColor=MainColor
+// -------------------------------------------------------------
+.sidebarColorGuard(@base,@background) when (@base = @background) 	{
+  padding-right: 0;
+  padding-left: 0;
+}
+
+
+// Vertically center Mobile logo
+.mobileLogoGuard(@parentElementHeight,@elementHeight) when (@parentElementHeight > @elementHeight)	{ .verticalAlign(@mobileMenuHeight, @mobileLogoHeight); }
+.mobileLogoGuard(@parentElementHeight,@elementHeight) when (@parentElementHeight =< @elementHeight)	{ vertical-align: top; }
+
+.verticalAlign(@parentElementHeight, @elementHeight) {
+  margin-top: -((@parentElementHeight - @elementHeight) / 2);
+}
+
+
+
+
+
+// --------------------------------------------------
+// ANIMATIONS
+// http://www.w3schools.com/css/css3_animations.asp
+// --------------------------------------------------
+.animation(@name: fadeIn, @duration: 1s) { 
+	-webkit-animation: @name @duration; /* Safari 4+, Chrome */
+	   -moz-animation: @name @duration; /* Fx 5+ */
+	   		animation: @name @duration; /* IE 10+ */
+}
+
+.animation(@name: fadeIn, @duration: 1s, @count: 1) {	// animation-iteration-count: default = 1
+	-webkit-animation: @name @duration @count; /* Safari 4+, Chrome */
+	   -moz-animation: @name @duration @count; /* Fx 5+ */
+	   		animation: @name @duration @count; /* IE 10+ */
+}
+.animation(@name: fadeIn, @duration: 1s, @transition: linear, @count: 1) { // animation-timing-function: default = ease
+	-webkit-animation: @name @duration @transition @count; /* Safari 4+, Chrome */
+	   -moz-animation: @name @duration @transition @count; /* Fx 5+ */
+	   		animation: @name @duration @transition @count; /* IE 10+ */
+}
+.animation(@name: fadeIn, @duration: 1s, @transition: linear, @delay: 0, @count: 1) { // animation-timing-function: default = ease
+	-webkit-animation: @name @duration @transition @delay @count; /* Safari 4+, Chrome */
+	   -moz-animation: @name @duration @transition @delay @count; /* Fx 5+ */
+	   		animation: @name @duration @transition @delay @count; /* IE 10+ */
+}
+
+
+// ANIMATION FEATURES
+// 
+.animation-name(@name: fadeIn) {
+	-webkit-animation-name: @name;
+	   -moz-animation-name: @name;
+			animation-name: @name;
+}
+.animation-duration(@duration: .6s) {
+	-webkit-animation-duration: @duration;
+	   -moz-animation-duration: @duration;
+			animation-duration: @duration;
+}
+.animation-delay(@delay: .2s) {
+	-webkit-animation-delay: @delay;
+	   -moz-animation-delay: @delay;
+			animation-delay: @delay;
+}
+.animation-iteration-count(@count: infinite) {
+	-webkit-animation-iteration-count: @count;
+	   -moz-animation-iteration-count: @count;
+			animation-iteration-count: @count;
+}
+.animation-fill-mode(@mode: forwards) {	/* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-webkit-animation-fill-mode:forwards;
+       -moz-animation-fill-mode:forwards;
+    		animation-fill-mode:forwards;
+}
+
+
+// --------------------------------------------------
+// CUSTOM ANIMATIONS
+// --------------------------------------------------
+
+
+// POPIN
+// ---------------------------------
+@-webkit-keyframes popIn { 
+			from { -webkit-transform: scale(0); } 
+			60%  { -webkit-transform: scale(.005); } 
+			95%  { -webkit-transform: scale(1.05); } 
+			to 	 { -webkit-transform: scale(1); } 
+		}	
+	@-moz-keyframes popIn { 
+			from { -moz-transform: scale(0); } 
+			60%  { -moz-transform: scale(.005); } 
+			95%  { -moz-transform: scale(1.05); } 
+			to 	 { -moz-transform: scale(1); } 
+		}
+		@keyframes popIn { 
+			from { transform: scale(0); } 
+			60%  { transform: scale(.005); }
+			95%  { transform: scale(1.05); } 
+			to 	 { transform: scale(1); } 
+		}
+.pop-in(@duration: .6s) {
+	-webkit-animation: popIn @duration 1; /* Safari 4+, Chrome */
+	   -moz-animation: popIn @duration 1; /* Fx 5+ */
+	   		animation: popIn @duration 1; /* IE 10+ */
+	.animation-fill-mode(forwards);
+}
+
+
+
+// FADE-IN
+// ---------------------------------
+@-webkit-keyframes fadeIn		{ from { opacity:0; } to { opacity:1; } }
+   @-moz-keyframes fadeIn		{ from { -moz-opacity:0; } to { -moz-opacity:1; } }
+   		@keyframes fadeIn		{ from { opacity:0; } to { opacity:1; } }
+   		
+.fade-in(@duration: 1s) {
+	// This initial opacity doesn't work in IE10 for .sl-field (see booking/layout.less)
+	opacity:0;  /* make things invisible upon start */
+	.animation(fadeIn, @duration, ease-in, 1);
+	.animation-fill-mode(forwards);
+}
+
+
+
+// ON SALE (COLUMNS)
+// ---------------------------------
+@-webkit-keyframes onSaleAnim	{ 
+	from { -webkit-transform: rotate(-45deg) 	scale(1);} 
+	60%  { -webkit-transform: rotate(-45deg) 	scale(1); } 
+	90%  { -webkit-transform: rotate(0deg)		scale(1.2);} 
+	to 	 { -webkit-transform: rotate(-45deg) 	scale(1);} 
+}
+   @-moz-keyframes onSaleAnim	{ 
+	   from { -moz-transform: rotate(-45deg) 	scale(1);} 
+	   60%  { -moz-transform: rotate(-45deg) 	scale(1); } 
+	   90%  { -moz-transform: rotate(0deg)		scale(1.2);} 
+	   to 	{ -moz-transform: rotate(-45deg) 	scale(1);} 
+   }
+		@keyframes onSaleAnim	{ 
+			from { transform: rotate(-45deg) 	scale(1);} 
+			60%  { transform: rotate(-45deg) 	scale(1); } 
+			90%  { transform: rotate(0deg) 		scale(1.2);} 
+			to 	 { transform: rotate(-45deg) 	scale(1);} 
+		}
+
+.onSale(@duration: 3s) {
+	.animation(onSaleAnim, @duration, infinite);
+}
+
+
+
+
+
+
+
+
+// ---------------------------------
+// Not used animations
+// ---------------------------------
+/*
+// FontAwesome: .icon-spin();
+// ---------------------------------
+	@-webkit-keyframes spin360	{ 
+		from { -webkit-transform: rotate(0); } 
+		to 	 { -webkit-transform: rotate(359deg); } 
+	}	
+	@-moz-keyframes spin360	{ 
+		from { -moz-transform: rotate(0); } 
+		to 	 { -moz-transform: rotate(359deg); } 
+	}
+	@keyframes spin360 { 
+		from { transform: rotate(0); } 
+		to 	 { transform: rotate(359deg); } 
+	}
+.spin-360(@duration: 1.6s) {	
+	.animation(spin360, @duration, linear, infinite);
+}
+*/
+
+// PULSING
+// ---------------------------------
+	@-webkit-keyframes puls-ing	{ 
+		from { -webkit-transform: scale(1);} 
+		30%  { -webkit-transform: scale(1);} 
+		70%  { -webkit-transform: scale(1.1);} 
+		to   { -webkit-transform: scale(1);} 
+	}
+	@-moz-keyframes puls-ing	{ 
+		from { -moz-transform: scale(1);} 
+		30%  { -moz-transform: scale(1);} 
+		70%  { -moz-transform: scale(1.1);} 
+		to   { -moz-transform: scale(1);} 
+	}
+	@keyframes puls-ing	{ 
+		from { transform: scale(1);} 
+		30%  { transform: scale(1);} 
+		70%  { transform: scale(1.1);} 
+		to   { transform: scale(1);} 
+	}
+.pulsing(@duration: 1.6s) {
+	.animation(puls-ing, @duration, infinite);
+}
+
+/*
+// GLOWING
+// ---------------------------------
+	@-webkit-keyframes glow-ing	{ 
+		from { opacity: 1; } 
+		40%  { opacity: 1; } 
+		50%  { opacity: .8; } 
+		60%	 { opacity: 1; } 
+		to   { opacity: 1; } 
+	}
+	@-moz-keyframes glow-ing { 
+		from { -moz-opacity: 1; } 
+		40%  { -moz-opacity: 1; } 
+		50%  { -moz-opacity: .8; } 
+		60%	 { -moz-opacity: 1; } 
+		to   { -moz-opacity: 1; } 
+	}
+	@keyframes glow-ing	{ 
+		from { opacity: 1; } 
+		40%  { opacity: 1; } 
+		50%  { opacity: .8; } 
+		60%	 { opacity: 1; } 
+		to   { opacity: 1; } 
+	}
+.glowing(@duration: 1s) {
+	.animation(glow-ing, @duration, infinite);
+}
+
+
+// BUTTON BACKGROUND ANIMATION
+// ---------------------------------
+	@-webkit-keyframes glowButton	{ 
+		from { background-color: @buttonPrimaryBackground; } 
+		50%  { background-color: #4cd8f8; } 
+		to   { background-color: @buttonPrimaryBackground; } 
+	}
+	@-moz-keyframes glowButton	{ 
+		from { background-color: @buttonPrimaryBackground; } 
+		50%  { background-color: #4cd8f8; } 
+		to   { background-color: @buttonPrimaryBackground; } 
+	}
+	@keyframes glowButton	{ 
+		from { background-color: @buttonPrimaryBackground; } 
+		50%  { background-color: #4cd8f8; } 
+		to   { background-color: @buttonPrimaryBackground; } 
+	}	
+.glow-button(@duration: 1.6s) {
+	.animation(glowButton, @duration, infinite);
+}
+
+
+// SLIDE DOWN
+// ---------------------------------
+	@-webkit-keyframes slideDown {
+		from { -webkit-transform: translate(0,-124em) } 
+		75%  { -webkit-transform: translate(0,1em) } 
+		to   { -webkit-transform: translate(0,0) } 
+	}
+	@-moz-keyframes slideDown {
+		from { -moz-transform: translate(0,-124em) } 
+		75%  { -moz-transform: translate(0,1em) } 
+		to   { -moz-transform: translate(0,0) } 
+	}
+	@keyframes slideDown {
+		from { transform: translate(0,-124em) } 
+		75%  { transform: translate(0,1em) } 
+		to   { transform: translate(0,0) } 
+	}	
+.slide-down(@duration: 1.6s) {
+	.animation(slideDown, @duration, 1);
+	.animation-fill-mode(forwards);
+}
+
+*/

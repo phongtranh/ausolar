@@ -1,0 +1,56 @@
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// HOMEPAGE LAYOUT
+// last edit: 5.5.2
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+
+// GENERAL LAYOUT
+// -------------------------------------------------------------
+// layout.less for padding & responsive box sizing
+
+.home section {
+	padding: @baseLineHeight 0;
+
+	// SIDEBAR LAYOUT
+	// -------------------
+	@media (min-width: 768px) {
+		.container {
+			position: relative;
+
+			.sl-hp-content {
+				width: 100%;
+				margin: 0;
+				.box-sizing(border-box);
+
+				&.right {
+					float: right;
+					width: (97.5% - @sidebarWidth);
+				}
+				&.left {
+					float: left;
+					width: (97.5% - @sidebarWidth);
+				}
+			}
+			.sl-hp-sidebar {
+				width: (@sidebarWidth - 1.5%);
+				margin: 0;
+				.box-sizing(border-box);
+				padding-right: @baseLineHeight;
+				padding-left: @baseLineHeight;
+				.sidebarColorGuard(@mainBackground, @sidebarBackground);
+
+				//.fade-in();
+				//.animation-delay(3s);
+
+				&.right {
+					float: right;
+				}
+				&.left {
+					float: left;
+				}
+			}
+		}
+	}
+
+}

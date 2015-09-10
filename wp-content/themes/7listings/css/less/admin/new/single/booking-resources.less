@@ -1,0 +1,283 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// BOOKING RESOURCES TAB - single listing
+// Last edit: 5.3.2
+// --------------------------------------------------
+// --------------------------------------------------
+
+// --------------------------------------------------
+// MAIN INPUT FIELDS
+// --------------------------------------------------
+.booking {
+	padding: 0 0 20px 0;
+	
+	a,
+	a:link {
+		text-decoration: none;
+	}
+
+	hr {
+		border-top: 0;
+		border-bottom: 0;
+		padding: 1em 0;
+		box-shadow: none;
+	}
+
+	.price-type {
+		min-width: 50px;
+		display: inline-block;
+	}
+
+	.hotel_detail,
+	.tour_detail,
+	.detail {
+		border-bottom: 1px solid rgba(0, 0, 0, .06);
+		margin: 20px -20px;
+		padding: 20px;
+
+		&:nth-child(2n+2) {
+			background: @wp-LightBackgroundMain;
+			margin-top: -20px;
+		}
+	}
+	.delete-booking {
+		float: right;
+	}
+	.add-booking.button {
+		margin: 20px 0 0 15em;
+	}
+
+	.resource-title > label {
+		top: 6px;
+		position: relative;
+
+		> .warning-lg {
+			margin: -4px 8px 0 0;
+		}
+	}
+
+	input[type="text"].hotel_detail_title,
+	input[type="text"].tour_detail_title,
+	input[type="text"].detail_title {
+		font-size: 20px;
+		line-height: 32px !important;
+		height: 36px;
+		padding: 6px 8px;
+		width: 360px;
+		margin: 0 0 .5em 0;
+
+		@media (max-width: 1300px) {
+			width: 100%;
+		}
+	}
+
+	.hotel_detail .hotel_detail_desc,
+	.tour_detail .tour_detail_desc,
+	.detail .detail_desc {
+		height: 100px;
+		width: 520px;
+		padding: 6px 8px;
+
+		@media (max-width: 1300px) {
+			width: 100%;
+		}
+	}
+	input[type="number"].small-text {
+		width: 79px;
+		text-align: right;
+	}
+
+	// --------------------------------------------------
+	// PHOTOS
+	// --------------------------------------------------
+	.booking-resources .photo-detail-container {
+		.sl-label {
+			width: 15.5em;
+
+			> label {
+				width: 152px !important;
+			}
+		}
+	}
+
+	// --------------------------------------------------
+	// ACCOMMODATION
+	// --------------------------------------------------
+	.hotel_detail {
+		.col-prices {
+			width: 380px;
+			margin: 0 40px 0 0;
+			float: left;
+		}
+		.col-occupancy {
+			width: 310px;
+			float: left;
+
+			label {
+				width: 120px;
+			}
+		}
+	}
+
+	// --------------------------------------------------
+	// TOUR
+	// --------------------------------------------------
+	.tour_detail {
+
+		.departures .col,
+		.departures-by-days .col {
+			text-align: center;
+		}
+
+		.departures-by-days > span,
+		.departures-by-days-head,
+		.departures-by-days-content {
+			clear: both;
+			display: block;
+		}
+
+		.departures-by-days > span {
+			margin-bottom: 5px;
+		}
+
+		/*
+		.departures-by-days-content label {
+			width: 14em !important;
+			margin-left: 1em;
+			//color: @wp-grey-light;
+		}
+		*/
+
+		.delete-departure {
+			color: rgba(0, 0, 0, .2);
+
+			&:before {
+				margin: 0 .2em 0 0;
+			}
+			&:hover {
+				color: @wp-red-delete-hover;
+			}
+		}
+		.add-huge.add-departure {
+			width: 64px;
+			height: 54px;
+			.border-radius(@inputBorderRadius);
+			border: 1px solid rgba(0, 0, 0, .1);
+			background-color: rgba(0, 0, 0, .05);
+			background-position: center center;
+			// background-image: url("@{image-path}graphics/plus-icon.svg"); background-repeat: no-repeat;
+
+			&:hover {
+				background-color: @wp-blue-dark; // overwritten with theme colours
+			}
+		}
+		.event-departure .event-depart {
+			width: 140px;
+			text-align: right;
+			padding-right: 20px;
+		}
+
+		.timepicker {
+			width: 60px;
+			margin: 0 0 4px 0;
+			text-align: center;
+		}
+
+		// TOUR PRICES
+		// --------------------------------------------------
+		.col {
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 10px;
+		}
+
+		.input {
+			display: inline-block;
+			margin-left: 15em;
+		}
+
+		.price-box.tour {
+			display: block;
+			margin-bottom: 3px;
+			line-height: 26px;
+			height: 26px;
+
+			.checkbox-toggle {
+				margin-right: 10px;
+			}
+			input[type="number"] {
+				text-align: right;
+			}
+		}
+
+		.lead-in-rate,
+		.allocation {
+			margin: 0 0 1em 0;
+		}
+		.upsells {
+			margin-bottom: 0;
+		}
+
+		// UPSELLS
+		// --------------------------------------------------
+		.upsell {
+			& > .input {
+				margin-left: 0;
+			}
+
+			.tour_detail_upsells_item,
+			.detail_upsells_item {
+				.input-huge;
+			}
+
+			.tour_detail_upsells_price,
+			.detail_upsells_price {
+				width: 60px;
+				text-align: right;
+				padding-right: 5px;
+			}
+
+			.input-prepend {
+				margin-left: 10px;
+			}
+			.amount {
+				width: @input-small;
+			}
+			.checkbox {
+				margin-left: 40px;
+			}
+			.button {
+				margin-left: 10px;
+
+				&.add-upsell-item {
+					margin-right: 14px;
+				}
+			}
+		}
+		
+		// CUSTOM LOCATION TAXONOMY
+		// --------------------------------------------------
+		.select2.select2-container {
+			min-width: 225px;
+		}
+	}
+	// END: .tour_detail
+
+	// --------------------------------------------------
+	// RENTAL
+	// --------------------------------------------------
+	.rental-price {
+		margin: 0;
+	}
+
+}
+
+// END: .booking
+
+
+
+
+
+
+
+

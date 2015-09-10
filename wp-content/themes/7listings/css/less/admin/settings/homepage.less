@@ -1,0 +1,167 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// HOMEPAGE SETTINGS
+// last edit: 5.1
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+.tip {
+	display: block;
+	margin-left: 15em;
+	padding-left: 4px;
+}
+
+.amount.large {
+	width: 76px;
+}
+
+
+
+// WIDGETS
+// --------------------------------------------------
+#homepage .box {
+	padding: 10px 0;
+	margin: 10px 0;
+	position: relative;
+
+	background: #fafafa;
+	color: #222;
+
+	border: 1px solid #e5e5e5;
+	.box-shadow(0 1px 1px rgba(0,0,0,.04));
+
+	&:hover {
+		color: rgba(0,0,0,0.9);
+
+		border-color: #999;
+		.box-shadow(0 1px 1px rgba(0,0,0,.1));
+		cursor: row-resize;
+	}
+
+
+	.heading {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 13px;
+		font-weight: 600;
+		margin: 0 0 0 56px;
+	}
+	.on-off {
+		position: absolute;
+		left: 0;
+		//color: #AAA;
+		color: transparent;
+		top: 0;
+		right: 50%;
+
+		.checkbox {
+			position: absolute;
+			left: 10px;
+			top: 8px;
+		}
+	}
+	.toggle {
+		position: absolute;
+		top: 7px;
+		right: 7px;
+		cursor: pointer;
+		background-image: none;
+
+		&:before,
+		&:hover {
+			color: #aaa;
+			background: none;
+			font: normal 20px/1 'dashicons';
+			speak: none;
+			display: block;
+			padding: 0;
+			text-indent: 0;
+			text-align: center;
+		}
+		&:hover,
+		&:hover:before  {
+			color: #777;
+		}
+		&.delete-md {
+			&:before {
+				content: '\f142';
+			}
+		}
+		&.add-md {
+			&:before {
+				content: '\f140';
+			}
+		}
+	}
+
+	.widget-settings {
+		background: #fff;
+		border-top: 1px solid #e5e5e5;
+		padding: 15px;
+		margin: 15px 0 -10px 0;
+
+		&:hover {
+			cursor: default;
+		}
+		
+		.sl-widget-title {
+			.sl-input-small {
+				margin: 0;
+				width: auto;
+			}
+		}
+		
+		hr.light {
+			border-color: transparent;
+			margin: 1em 0;
+		}
+	}
+}
+
+
+
+
+.heading, .field {
+	display: block;
+}
+.field {
+	border-top: 1px solid rgba(0,0,0,0.1);
+	margin: 10px -15px;
+	padding: 10px 15px 0;
+	display: none; /* Hide fields by default */
+}
+.field + .field,
+.field + div {
+	border-top: none;
+}
+
+#homepage_content_ifr {
+	background: #FFF;
+}
+
+#wp-homepage_content-editor-container,
+#wp-homepage_featured_area_custom_text-editor-container {
+	width: 700px;
+}
+
+.sl-membership-options .sl-input > span {
+	margin-right: 1.5em;
+}
+
+
+// FOOTER SETTING
+// --------------------------------------------------
+#homepage {
+	.homepage-footer {
+		.sl-label {
+			left: 58px;
+			position: relative;
+		}
+		.sl-input {
+			left: 23px;
+			position: absolute;
+			margin-top: 4px;
+		}
+	}
+}
+

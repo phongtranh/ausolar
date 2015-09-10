@@ -1,0 +1,298 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// COLOUR CYSTOMIZATIONS 
+// FOR WP 3.8+ USER THEMES
+
+// last edit: 5.6.6
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// WP 3.8 THEME COLOURS
+// --------------------------------------------------
+@wp-fresh: 			#00a0d2;	// #1E8CBD;	// #2ea2cc;	// button #1e8cbe; 	// tab: #0074a2
+@wp-light: 			#04a4cc;	// tab color: #888;		#04a4cc; 	// #888888
+@wp-a-blue: 		#096484; 	// button: #dd9f32;
+@wp-coffee: 		#c7a589;	// button: #bf9878;
+@wp-ectoplasm: 		#a3b745;	// button: #93a43e;
+@wp-midnight: 		#e14d43;	// button: #dd382d;
+@wp-ocean: 			#9ebaa0;	// button: #8faf91;
+@wp-sunrise: 		#dd823b;	// button: #d97426;
+
+// Admin Color Schemes - plugin
+@wp-vineyard:		#dcb034;	// button: #ac788d;
+@wp-seashore:		#456a7f;	// button: #517242;
+@wp-primary:		#456a7f;	// button: #898ebb;
+@wp-lawn:			#a7b145;	// button: #517242;
+@wp-flat:			#1abc9c; 	// button: #e08e0b;
+@wp-cruise:			#95b253; 	// button: #95b253;
+@wp-aubergine:		#da9b49; 	// button: #da9b49;
+@wp-80s-kid:		#ed5793;	// button: #e97724;
+
+// --------------------------------------------------
+// MIXIN
+// --------------------------------------------------
+.adminSkin(@wpAdminColor) {
+// TABS
+/*
+	.tabs > ul > li:hover { 
+		background-color: lighten(@wpAdminColor, 10%);
+	}
+*/	
+// LAYOUT ICONS
+	.layout {
+		input:checked + label.active,
+		input:checked + label.active:hover,
+		input:checked + label,
+		input:checked + label:hover	{ 
+			border-color: @wpAdminColor; 		
+			background-color: lighten(@wpAdminColor, 35%);
+		}
+	}
+	
+// ON/OFF CHECKBOXES
+	.checkbox input[type=checkbox] + label {
+		background-color: #FFF;
+	}
+	.checkbox input[type=checkbox]:checked + label {
+		background-color: @wpAdminColor;
+	}
+// POST TYPE ICONS
+	.post-type-input input[type="radio"]:checked + .icon:before,
+	.post-type-input input[type="checkbox"]:checked + .icon:before {
+		background-color: @wpAdminColor;
+		border-color: @wpAdminColor;
+	}
+	
+// SELECTED CUSTOM ICONS (design)
+	#design .icons-select .active i { 
+		background: @wpAdminColor;
+	}
+
+// EDIT POST
+// ---------------------------	
+// POST FORMATS
+	#post-formats-select input[type="radio"]:checked + label:before { 
+		color: @wpAdminColor;
+	}
+	
+// PHOTOS (edit post)
+	.photo-detail-container:hover { 
+		border-color: @wpAdminColor;
+		background-color: lighten(@wpAdminColor, 35%);
+	}
+
+// BOOKING RESOURCES ADD DEPARTURE (tour)
+	.add-huge.add-departure:hover { 
+		border-color: @wpAdminColor;
+		background-color: lighten(@wpAdminColor, 35%)!important;
+	}
+	
+// ATR - SCHEDULES TAB
+	.scheduling { 
+		.seas-resource,
+		.seas-price,
+		.seas-schedule,
+		.perm-resource,
+		.perm-price,
+		.perm-schedule,
+		.allo-resource,
+		.allo-allocation,
+		.allo-schedule {
+			background-color: fade(@wpAdminColor, 20%);
+		}
+		.perm-change-date,
+		.perm-new-price,
+		.seas-from,
+		.seas-to,
+		.seas-fixed,
+		.seas-percentage,
+		.seas-new-price,
+		.allo-from,
+		.allo-to,
+		.allo-new-allocation {
+			background-color: fade(@wpAdminColor, 40%);
+		}
+	}
+
+// MODALS
+// ----------------------------
+// CUSTOM ICON BUTTONs
+	.modal.sls-popup .icons-select .icon-single:hover {
+		background-color: @wpAdminColor;
+	}
+	
+// DATEPICKER
+	#ui-datepicker-div {
+		.ui-datepicker-prev, 
+		.ui-datepicker-next {
+			color: @wpAdminColor;
+			
+			&:hover {
+				background-color: @wpAdminColor;
+			}
+		}
+		.ui-datepicker-calendar {
+			.ui-state-default {
+				background: fade(@wpAdminColor, 25%);
+				color: @wpAdminColor;
+	
+			}
+			.ui-state-default:hover,
+			.ui-state-hover {
+				background: @wpAdminColor;
+			}
+		}
+	// TIME PICKER
+	/*
+		.ui-timepicker-div {
+			.ui-slider-handle {
+				background: lighten(@wpAdminColor, 5%);
+				
+				&:hover,
+				&.ui-state-hover {
+					background: @wpAdminColor;
+				}
+				&:active,
+				&.ui-state-active {
+					background-color: darken(@wpAdminColor, 10%);
+				}
+			}
+		}
+	*/
+	// CLOSE BUTTON
+		.ui-datepicker-buttonpane {
+			button {
+				&.ui-priority-primary {
+					background: lighten(@wpAdminColor, 5%);
+					
+					&:hover {
+						background: @wpAdminColor;
+					}
+				}
+			}
+		}
+	}
+
+// jQuery UI	
+	.ui-state-default, 
+	.ui-widget-content .ui-state-default, 
+	.ui-widget-header .ui-state-default {
+		background: lighten(@wpAdminColor, 10%);
+		border-color: darken(@wpAdminColor, 5%);
+		//box-shadow: inset 0 0 0 4px @wpAdminColor;
+		
+		&:hover,
+		&.ui-state-hover {
+			background: #fff;
+			border-color: darken(@wpAdminColor, 10%);
+			//box-shadow: inset 0 0 0 6px @wpAdminColor;
+		}
+	}
+	
+	.ui-slider {
+		.ui-state-default {
+			background: lighten(@wpAdminColor, 20%);
+			box-shadow: inset 0 0 0 4px @wpAdminColor;
+			transition: background .3s ease-in-out, 
+						box-shadow .3s ease-in-out;
+			
+			&:hover,
+			&.ui-state-hover {
+				box-shadow: inset 0 0 0 6px @wpAdminColor;
+			}
+		}
+	}	
+	
+// select2	
+	&.wp-admin  {
+		
+		.select2-container--default.select2-container--focus .select2-selection--multiple {
+			border-color: @wpAdminColor;
+			box-shadow: 0 0 2px fade(@wpAdminColor, 80%);						
+		}
+		.select2-results__options .select2-results__option--highlighted[aria-selected] {
+			background-color: @wpAdminColor;
+			//color:white;
+		}
+	}
+	
+// CodeMirror
+	.CodeMirror {
+		.CodeMirror-selected { 
+			background: fade(@wpAdminColor, 20%);
+		}
+		.CodeMirror-matchingbracket {
+			color: @wpAdminColor;
+		}
+	}
+}
+
+
+
+
+// --------------------------------------------------
+// APPLY MIXIN
+// --------------------------------------------------
+.admin-color-fresh { 
+	.adminSkin(@wp-fresh);
+}
+.admin-color-light { 
+	.adminSkin(@wp-light);
+}
+.admin-color-blue { 
+	.adminSkin(@wp-a-blue);
+}
+.admin-color-coffee { 
+	.adminSkin(@wp-coffee);
+}
+.admin-color-ectoplasm { 
+	.adminSkin(@wp-ectoplasm);
+}
+.admin-color-midnight { 
+	.adminSkin(@wp-midnight);
+}
+.admin-color-ocean { 
+	.adminSkin(@wp-ocean);
+}
+.admin-color-sunrise { 
+	.adminSkin(@wp-sunrise);
+}
+
+// Extra plugin styles
+.admin-color-vineyard { 
+	.adminSkin(@wp-vineyard);
+}
+.admin-color-seashore { 
+	.adminSkin(@wp-seashore);
+}
+.admin-color-primary { 
+	.adminSkin(@wp-primary);
+}
+.admin-color-lawn { 
+	.adminSkin(@wp-lawn);
+}
+.admin-color-flat { 
+	.adminSkin(@wp-flat);
+}
+.admin-color-cruise { 
+	.adminSkin(@wp-cruise);
+}
+.admin-color-aubergine { 
+	.adminSkin(@wp-aubergine);
+}
+
+
+
+// --------------------------------------------------
+// WP DELETE BUTTON
+// --------------------------------------------------
+.button[class*="delete"]:hover { 
+	background: @wp-red-delete-hover;
+	color: white;
+	box-shadow: none;
+	border-color: darken(@wp-red-delete-hover, 20%);
+	text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}

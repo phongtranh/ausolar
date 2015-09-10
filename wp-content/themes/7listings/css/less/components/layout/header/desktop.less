@@ -1,0 +1,561 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// DESKTOP HEADER DESIGN
+// last edit: 5.8.3
+// --------------------------------------------------
+// --------------------------------------------------
+
+// CONTENTS
+// --------------------------
+// - NAVIGATION
+// - - NAVBAR
+// - - 1ST LEVEL MENU
+// - - DROPDOWNS
+// --------------------------
+// - HiDPI Displays
+
+#nav-mobile,
+#nav-open-btn,
+#logo-mobile {
+	display: none !important;
+}
+
+#branding > .container {
+	min-height: 60px;
+}
+
+// --------------------------------------------------
+// SITE TITLE & DESCRIPTION
+// --------------------------------------------------
+#logo-desktop {
+	margin-right: (@baseLineHeight / 2);
+	width: @logoWidth;
+	height: @logoHeight;
+}
+
+#site-title {
+	display: @siteTitleDisplay;
+	margin: 0 (@baseLineHeight / 2) 0 0;
+	font-size: @siteTitleSize;
+	color: @siteTitleColor;
+	text-decoration: none;
+	.textguard(@siteTitleColor, @headerBackground);
+}
+
+#site-description {
+	display: @siteDescriptionDisplay;
+	margin: 0;
+	font-size: @siteDescriptionSize;
+	color: @siteDescriptionColor;
+	.textguard(@siteDescriptionColor, @headerBackground);
+}
+
+.home-link {
+	display: inline-block;
+	margin: (@baseLineHeight / 2) 0;
+
+	&:hover {
+		.opacity(75);
+	}
+}
+
+// --------------------------------------------------
+// PHONE NUMBER
+// --------------------------------------------------
+.phone {
+
+	#header-phone-number {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		font-size: 18px; //@h3Size;
+		margin-top: -.5em;
+		text-align: right;
+		font-family: @h4Font;
+
+		a {
+			color: @headerPhoneColor;
+
+			&:hover {
+				color: mix(@headerPhoneColor, @headerBackground, 70%);
+			}
+		}
+
+		&.light a {
+			color: rgba(255, 255, 255, .3);
+
+			&:hover {
+				color: rgba(255, 255, 255, .8);
+			}
+		}
+		&.dark a {
+			color: rgba(0, 0, 0, .3);
+
+			&:hover {
+				color: rgba(0, 0, 0, .7);
+			}
+		}
+	}
+
+	// PHONE + SOCIAL DESIGN
+	&.social {
+		#header-phone-number {
+			top: 10%;
+			margin-top: 0;
+		}
+		#branding > .container {
+			min-height: 80px;
+		}
+	}
+
+	// PHONE + WEATHER DESIGN
+	&.weather {
+		#header-phone-number {
+			right: 160px;
+		}
+	}
+}
+
+// --------------------------------------------------
+// SOCIAL MEDIA LINKS
+// Design: @import /components/common/social-media.less
+// --------------------------------------------------
+.social {
+
+	.social-media.header {
+		position: absolute;
+		right: 0;
+		top: 25%;
+		//margin-top: -.5em;
+		text-align: right;
+		font-size: 1.5em;
+
+		//a:before { .border-radius(@baseBorderRadius * .75); }
+	}
+
+	// PHONE + SOCIAL DESIGN
+	&.phone {
+		.social-media.header {
+			bottom: 10%;
+			top: inherit;
+
+			&.counters {
+				font-size: 1.2em;
+			}
+		}
+	}
+
+	// SOCIAL + WEATHER DESIGN
+	&.weather {
+		.social-media.header {
+			right: 160px;
+		}
+	}
+}
+
+// --------------------------------------------------
+// WEATHER WIDGET
+// --------------------------------------------------
+#weather {
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	right: 0;
+
+	width: 130px;
+	height: 70px;
+	text-align: right;
+
+	.temp,
+	.humi,
+	.wind {
+		width: 100%;
+		display: block;
+		z-index: 9;
+		position: relative;
+		font-size: 10px;
+		line-height: 12px;
+	}
+	.temp {
+		font-size: 32px;
+		line-height: 32px;
+		padding: 10px 0 0 0;
+	}
+	.temp > sup {
+		margin: -12px 0 12px 0;
+		display: inline-block;
+		font-size: .6em;
+	}
+	i,
+	.weather-icon {
+		font-size: 4em;
+		z-index: 1;
+		position: absolute;
+		top: 10px;
+		left: 0;
+	}
+	img {
+		z-index: 1;
+		position: absolute;
+		top: 5px;
+		left: -10px;
+	}
+	&.light {
+		color: rgba(255, 255, 255, .3);
+	}
+	&.dark {
+		color: rgba(0, 0, 0, .3);
+	}
+	&.custom {
+		color: @weatherColor;
+		//.textguard(@weatherColor, @headerBackground);
+	}
+}
+
+// --------------------------------------------------
+// NAVBAR
+// --------------------------------------------------
+.navbar {
+	background-color: @navbarBackgroundColor;
+	overflow: visible;
+
+	// Fix for IE7's bad z-indexing so dropdowns don't appear below content that follows the navbar
+	*position: relative;
+	*z-index: 2;
+
+	width: 100%;
+	z-index: (@zindexDropdown - 10);
+
+	// Prevent floats from breaking the navbar
+	.clearfix();
+
+	//nav {
+	min-height: @navbarHeightDesktop;
+	//padding-left:  20px;
+	//padding-right: 20px;
+	//width: auto;
+
+	.nav {
+		position: relative;
+		display: inline;
+		left: 0;
+		float: none;
+		margin: 0;
+		list-style: none;
+
+		a {
+			font: @navbarFontSize @navbarFont;
+			//.textguard(@navbarLinkColor, @navbarBackgroundColor);
+		}
+		> li > a {
+			line-height: (@navbarHeightDesktop / 2);
+		}
+	}
+	//}
+}
+
+// --------------------------------------------------
+// FIXED MAIN NAVIGATION WHEN SCROLL DOWN
+// --------------------------------------------------
+#branding.fixed .navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	//.translate(0,0);
+	
+	//z-index: 99999;
+	z-index: (@zindexDropdown - 9);
+	width: 100%;
+	.border-radius(0);
+	.opacity(95);
+	box-shadow: 0 1px 0 rgba(255,255,255,.1), 
+				0 0 16px rgba(0,0,0,.5);
+				
+	.transition(all ease-in .6s);
+	
+	-webkit-transform: translateZ(0); // Put navbar into separate composition layer for better performance on scroll
+	   -moz-transform: translateZ(0);
+			transform: translateZ(0);
+	
+	&:hover {
+		.opacity(100);
+	}
+
+	.admin-bar & {
+		top: 28px;
+	}
+}
+
+
+// --------------------------------------------------
+// 1ST LEVEL MENU
+// --------------------------------------------------
+.nav {
+	> li {
+		float: left;
+	
+		> a {
+			display: block;
+			float: none;
+			// Vertically center the text given @navbarHeight
+			padding: (@navbarHeightDesktop / 4) 15px (@navbarHeightDesktop / 4);
+			color: @navbarLinkColor;
+			text-decoration: none;
+			height: @navbarHeightDesktop;
+			//line-height: (@navbarHeightDesktop / 2); // declared above with .navbar
+			.box-sizing(border-box);
+	
+			&:focus,
+			&:hover {
+				background-color: @navbarLinkBackgroundHover; // "transparent" is default to differentiate :hover/:focus from .active
+				color: @navbarLinkColorHover;
+				//.textguard(@navbarLinkColorHover, @navbarLinkBackgroundHover);
+				text-decoration: none;
+			}
+			&.dropdown-toggle .caret {
+				margin: 0;
+			}
+		}
+	
+		// Active nav items
+		&.active > a,
+		&.active > a:hover,
+		&.active > a:focus {
+			background-color: @navbarLinkBackgroundActive;
+			//.box-shadow(inset 0 3px 8px rgba(0, 0, 0, .125));
+			cursor: default;
+			color: @navbarLinkColorActive;
+			//.textguard(@navbarLinkColorActive, @navbarLinkBackgroundActive);
+			text-decoration: none;
+			cursor: pointer;
+		}
+		
+		&.dropdown {
+			height: 40px;
+		}
+	}
+	// --------------------------------------------------
+	// DROPDOWNS
+	// --------------------------------------------------
+	// Menu item caret
+	.dropdown-toggle:after {
+		font-family: FontAwesome;
+		text-shadow: inherit;
+		position: relative;
+		margin-left: 5px;
+		content: "\f0d7";
+	}
+	// dropdown wrapper
+	.dropdown-menu {
+		margin-top: 0;
+		.border-radius(0 0 @baseBorderRadius @baseBorderRadius); // remove the top rounded corners here since there is a hard edge above the menu
+		.maxRadiusGuard (@baseBorderRadius, 12px);
+
+		border: 1px solid @dropdownBorder;
+		border-top-color: lighten(@dropdownBorder, 10%);
+		.box-shadow(0 4px 8px -4px rgba(0, 0, 0, .4));
+		padding: 0;
+		
+		.fade-in (@duration: .5s);
+		
+		> li > a {
+			padding: 10px;
+			font-size: (@navbarFontSize * .9);
+			line-height: 1em;
+			.box-sizing(border-box);
+			//.textguard(@dropdownLinkColor,@dropdownBackground);
+			
+			&:focus,
+			&:hover {
+				.textguard(@dropdownLinkColorHover,@dropdownLinkBackgroundHover);
+			}
+		}
+		// Second level dropdowns
+		> li > .dropdown-menu {
+			margin-left: 30%;
+			border-top-color: lighten(@dropdownBorder, 10%);
+			border-left-color: lighten(@dropdownBorder, 10%);
+			.border-radius(0 @baseBorderRadius @baseBorderRadius @baseBorderRadius);
+			.maxRadiusGuard (@baseBorderRadius, 12px);
+		}
+
+		// Sub-menu carets
+		&:before {
+			content: '';
+			display: inline-block;
+			border-left: 7px solid transparent;
+			border-right: 7px solid transparent;
+			border-bottom: 7px solid #ccc;
+			border-bottom-color: @dropdownBorder;
+			position: absolute;
+			top: -7px;
+			left: 9px;
+		}
+		&:after {
+			content: '';
+			display: inline-block;
+			border-left: 6px solid transparent;
+			border-right: 6px solid transparent;
+			border-bottom: 6px solid @dropdownBackground;
+			position: absolute;
+			top: -6px;
+			left: 10px;
+		}
+		
+		&.show {
+			display: block;
+		}
+	
+	// Multi Column dropdowns
+	// -----------------------------
+		&[class*="columns-"] {
+			> li {
+				display: inline-block;
+				float: left;
+				margin: 0;
+				
+				> a {
+					margin: 0;
+					padding: 9px 12px;
+					white-space: normal;
+				}
+			}
+		}
+			
+		&.columns-2 {
+			min-width: 400px;
+			
+			> li {
+				width: 50%;
+				
+				&:nth-of-type(2n+1) { clear: left; }
+			}
+		}
+		&.columns-3 {
+			min-width: 500px;
+			
+			> li {
+				width: 33.33%;
+				
+				&:nth-of-type(3n+1) { clear: left; }
+			}
+		}
+		&.columns-4 {
+			min-width: 600px;
+			
+			> li {
+				width: 25%;
+				
+				&:nth-of-type(4n+1) { clear: left; }
+			}
+		}
+		&.columns-5 {
+			min-width: 750px;
+			
+			> li {
+				width: 20%;
+				
+				&:nth-of-type(5n+1) { clear: left; }
+			}
+		}
+		&.columns-6 {
+			min-width: 750px;
+			
+			> li {
+				width: 16.66%;
+				
+				&:nth-of-type(6n+1) { clear: left; }
+				
+				> a {
+					padding: 8px 10px;
+				}
+			}
+		}			
+	}
+}
+
+// Prevent IE8 from misplacing imgs
+// See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+.nav > li > a > img {
+	max-width: none;
+}
+
+// --------------------------------------------------
+// SEARCH
+// --------------------------------------------------
+.navbar .navbar-search {
+	margin: (@navbarHeightDesktop * .125) 0 (@navbarHeightDesktop * .125) (@navbarHeightDesktop * .25);
+	float: right;
+	display: inline-block;
+	position: relative;
+	//z-index: (@zindexDropdown - 5);
+
+	.clearfix(); // Prevent floats from breaking the navbar
+
+	input[type="search"].keyword {
+		-webkit-transition-duration: 400ms;
+		-webkit-transition-property: width, background, margin-left;
+		-webkit-transition-timing-function: ease;
+		-moz-transition-duration: 400ms;
+		-moz-transition-property: width, background, margin-left;
+		-moz-transition-timing-function: ease;
+		-o-transition-duration: 400ms;
+		-o-transition-property: width, background, margin-left;
+		-o-transition-timing-function: ease;
+		transition-duration: 400ms;
+		transition-property: width, background, margin-left;
+		transition-timing-function: ease;
+		
+		background: mix(@navbarBackgroundColor , @navbarLinkColor, 70%);
+		border: none;
+		.box-shadow(none);
+		width: 72px;
+		.border-radius(@baseBorderRadius 0 0 @baseBorderRadius);
+		margin: 0 -5px 0 0;
+		padding: 0 (@navbarHeightDesktop * .25);
+		height: (@navbarHeightDesktop * .75);
+		line-height: (@navbarHeightDesktop * .75);
+		
+		
+		&:focus {
+			//background: @navbarLinkBackgroundHover;
+			background: #fff;
+			width: 206px;
+			margin-left: -134px;
+		}
+		
+		.placeholder(@navbarLinkColor);
+	}
+	#search-button {
+		color: @navbarBackgroundColor;
+		text-shadow: none;
+		display: inline-block;
+		.border-radius(0 @baseBorderRadius @baseBorderRadius 0);
+		background: @navbarLinkColor;
+		
+		font-size: 1.3em;
+		border: none;
+		.box-shadow(none);
+		padding: 0;
+		line-height: 0em;
+		
+		
+		text-indent: -9999em;
+		
+		&:after {
+			font-family: "FontAwesome";
+			position: relative;
+			content: "\f002"; 
+			display: block;
+			text-indent: 0;
+			//top: -0.4em;
+			
+			height: (@navbarHeightDesktop * .75);
+			line-height: (@navbarHeightDesktop * .75);
+			width: (@navbarHeightDesktop * .9);
+		}
+		&:hover {
+			background: #fff;
+		}
+	}
+}

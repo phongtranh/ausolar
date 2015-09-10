@@ -1,0 +1,79 @@
+// Theme Name:     7 Listings
+// Description:    Booking Page Stylesheet
+// Author:         7 Listings
+// Author URI:     http://www.7listings.net
+// Version:        5.6.6
+//
+//	CONTENTS
+// --------------------------------------------------
+//	- CONTENT
+//	- - INPUT FIELDS
+//	- BOOKING PANELS
+//	- - PANEL STATES
+//	- PANEL 1
+//	- -
+//	- -
+//	- - GUESTS SELECT
+//	- PANEL NAVIGATION BUTTONS
+//	- SUMMARY/RIGHT COLUMN
+//	- RESOURCE SELECT
+//  - FOOTER SECTIONS
+//	+ DATEPICKER
+// - EMBEDDED IMAGES
+// --------------------------------------------------
+
+// Core variables and mixins
+@import "components/7variables.less";
+@import "components/7mixins.less";
+
+
+@bookInputBackgroundColor: 			rgba(255,255,255,.8);
+@bookInputBorderColor: 				rgba(225,216,85,.75);
+@bookInputColor:					#666;
+@bookInputPlaceholderColor:			rgba(0,0,0,.4);
+
+@bookInputHoverBackgroundColor: 	#fff;
+@bookInputHoverBorderColor: 		#8ed85c;
+
+@bookInputFocusBackgroundColor: 	#fff;
+@bookInputFocusBorderColor: 		#56962b;
+@bookInputFocusShadowColor: 		#8ed85c;
+@bookInputFocusColor:				#222;
+
+@inputIconWidth: 					30px;
+@requiredColor:						rgba(78, 195, 0, 0.75); //rgba(225,216,85,.75); //#8ed85c;
+
+
+
+@import "components/bootstrap-2.3.1/variables.less";
+// Used & customized variables are put into 7variables.less
+@import "components/bootstrap-2.3.1/mixins.less";
+
+
+
+
+.book {
+	@import "components/booking/layout.less";
+
+	@import "components/booking/booking-details.less";
+
+	@import "components/booking/contact.less";
+
+	@import "components/booking/summary.less";
+
+} //.book
+
+@import "components/booking/payment-gateways.less";
+
+// --------------------------------------------------
+// CALEDNADER & TIME POPUPS
+// --------------------------------------------------
+@import "components/plugins/datepicker/style.less";
+
+// Fix for IE, the class .ie is added to body tag by Javascript
+.ie #content {
+	.sl-field,
+	.panel-content {
+		opacity: 1;
+	}
+}

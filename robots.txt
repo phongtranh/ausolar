@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /area/
+Disallow: /cta/
+Disallow: /postcode/

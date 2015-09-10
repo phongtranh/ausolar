@@ -1,0 +1,107 @@
+// -------------------------------------
+// -------------------------------------
+// WOOTHEMES TESIMONIALS PLUGIN STYLING
+// last edit: 4.8
+// -------------------------------------
+// -------------------------------------
+
+
+
+// GENERIC / MAIN CONTENT STYLES
+// --------------------------------
+.widget_woothemes_testimonials {
+	.quote {
+		margin: 0 0 6em;
+		clear: both;
+	}
+	blockquote {
+		background-image: none;
+		font-size: 14px;
+		line-height: 22px;
+				
+		padding: 0;
+		margin: 0 0 2em;
+		border: none;
+	}
+	
+	blockquote:before,
+	.quote:after {
+		text-shadow: 0 1px 1px rgba(0,0,0,.6);
+		font-family: Georgia, 'Times New Roman', Times, serif;
+		line-height: 48px;
+		color: rgba(0,0,0,.6);
+		
+		text-shadow: 0 1px 0 rgba(255,255,255,.4);
+		font-size: 102px;
+	}
+	blockquote:before {
+		content: "\201C";
+		float: left;
+		margin: 24px 10px -32px 4px;
+	}
+	.quote:after {
+		content: "\201D";
+		float: right;
+		margin: -85px 12% 0 0;
+		margin: 4px 24px -32px -20px;
+	}
+	blockquote:after { content: none;} /*FIX FOR DEFAULT BLOCKQUOTE STYLING*/
+	
+	.avatar-link {
+		float: left;
+		margin: 0 1.4em 0 0;
+	}
+	
+	.author {
+		color: #927A57;
+		text-shadow: none;
+		font-size: 28px;
+		
+		.excerpt {
+			display: block;
+			color: #7DB812;
+			font-size: 18px;
+		}
+		.url{
+			font-size: 16px;
+		}
+	}
+}
+
+
+// WIDGET SPECIFIC STYLES
+// --------------------------------
+.widget-area .widget_woothemes_testimonials {
+	
+	blockquote {
+		border-top: 1px solid rgba(0,0,0,.1);
+		box-shadow: inset 0 2px 0 -1px rgba(255,255,255,.2);
+		
+		padding: 12px 0 0 0;
+		margin: 0 0 1em;
+		
+		height: 110px;
+		width: 90%;
+		
+		white-space: wrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	blockquote:before,
+	.quote:after {
+		color: #5D9301;
+	}
+	.quote:after {
+		margin: 4px 24px -32px -20px;
+	}
+	.author {
+		font-family: Oswald;
+		font-size: 20px;
+		font-style: normal;
+		text-shadow: 0 1px 1px rgba(0,0,0,.6);
+	
+		.excerpt {
+			display: block; font-size: 15px;
+		}
+	}
+}

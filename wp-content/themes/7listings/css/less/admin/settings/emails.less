@@ -1,0 +1,91 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// EMAILS
+// --------------------------------------------------
+// --------------------------------------------------
+
+//	CONTENTS
+// -----------------------
+// - INPUT SIZES
+// - TINY MCE BOXES
+// - SHORTCODES
+// -----------------------
+
+
+// INPUT SIZES
+// --------------------------------------------------
+
+#emails_booking_cart_guess_subject,
+#emails_booking_cart_admin_subject,
+
+#emails_booking_acco_guess_subject,
+#emails_booking_acco_admin_subject,
+
+#emails_booking_tour_guess_subject,
+#emails_booking_tour_admin_subject,
+
+#emails_company_membership_user_subject,
+#emails_company_membership_admin_subject,
+
+#contact_subject,
+#contact_admin_subject,
+input[type="text"].email-subject {
+	width: 370px;
+}
+
+
+// TINY MCE BOXES
+// --------------------------------------------------
+.email-content-box {
+	width: 660px;
+	margin: 0 20px 20px 0;
+	float: left;
+}
+
+#contact_message_ifr,
+#emails_booking_acco_guess_message_ifr,
+#emails_booking_acco_admin_message_ifr,
+#emails_booking_tour_guess_message_ifr,
+#emails_booking_tour_admin_message_ifr {
+	background: white;
+}
+#contact_message_ifr {
+	min-height: 200px;
+}
+#emails_booking_acco_guess_message_ifr,
+#emails_booking_acco_admin_message_ifr,
+#emails_booking_tour_guess_message_ifr,
+#emails_booking_tour_admin_message_ifr {
+	min-height: 260px
+}
+
+
+// SHORTCODES
+// --------------------------------------------------
+.email-shortcodes {
+	float: left;
+	display: block;
+	width: 25%;
+	margin: 0;
+}
+.email-shortcodes > code {
+	background: rgba(255,255,255,.7);
+	padding: 4px;
+	
+	color: @wp-grey;
+	border: 1px solid @wp-grey-ulight;
+	border-bottom-color: rgba(0,0,0,.15);
+	float: left;
+	padding: 8px 6px;
+	margin: 0 .5em .5em 0;
+	line-height: 1em;
+	
+	.border-radius (3px);
+	.box-shadowed (2px, rgba(0,0,0,.2));
+}
+.email-shortcodes > code:hover {
+	background: white;
+	color: green;
+	.box-shadowed (2px, rgba(0,0,0,.2));
+	border: 1px solid rgba(0,0,0,.3);
+}

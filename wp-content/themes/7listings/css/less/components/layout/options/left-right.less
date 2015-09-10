@@ -1,0 +1,77 @@
+// ----------------------------------------
+// ----------------------------------------
+// LEFT & RIGHT LAYOUT
+// last edit: 5.8.3
+// ----------------------------------------
+// ----------------------------------------
+
+@media (min-width: 768px) {
+	
+	.layout-left {
+		.full-width-layout {
+			#branding,
+			#branding .navbar,
+			#breadcrumbs,
+			#featured,
+			#main,
+			#top,
+			#middle,
+			#bottom,
+			//.footer-section,
+			section {
+				
+				> .container {
+					margin-left: @baseLineHeight;
+				}
+			}
+		}
+		.one-box-layout { 
+			margin-left: 0; 
+			
+			#branding.fixed .navbar .container {
+				margin-left: 0;	
+			}
+		}
+		.boxes-layout { 
+			margin-left: @baseLineHeight;
+			
+			#branding.fixed .navbar .container {
+				margin-left: @baseLineHeight;	
+			}
+		}
+	}
+	.layout-right {
+		.full-width-layout {
+			#branding,
+			#branding .navbar,
+			#breadcrumbs,
+			#featured,
+			#main,
+			#top,
+			#middle,
+			#bottom,
+			//.footer-section,
+			section {
+				
+				> .container {
+					margin-right: @baseLineHeight;
+				}
+			}
+		}
+		.one-box-layout {  
+			margin-right: 0;
+			
+			#branding.fixed .navbar .container {
+				margin-right: 0;
+			}
+		}
+		.boxes-layout { 
+			margin-right: @baseLineHeight;
+			
+			#branding.fixed .navbar .container {
+				margin-right: @baseLineHeight;
+			}
+		}
+	}
+
+} // @media

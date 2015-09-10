@@ -1,0 +1,578 @@
+// --------------------------------------------------
+// PANEL 1 - BOOKING DETAILS
+// last edit: 5.8.2
+// --------------------------------------------------
+.booking-details {
+
+	#lead-in-rate {
+		position: absolute;
+		top: 20px;
+		left: 0;
+		text-align: right;
+		width: 20%;
+		font-size: 12px;
+
+		&.free-booking .amount {
+			text-transform: capitalize;
+			font-size: 1em;
+			margin: 14px 7px 0 0;
+			display: block;
+		}
+
+		@media (max-width: 400px) {
+			display: none;
+		}
+	}
+
+	.stars {
+		float: right;
+		top: -40px;
+	}
+
+	&.collapse {
+		#lead-in-rate,
+		.stars {
+			display: none;
+		}
+	}
+
+	// RESOURCE SELECT
+	// --------------------------------------------------
+	.resource {
+		position: relative;
+		padding: 0;
+		margin: -10px 0 40px 20%;
+
+		@media (max-width: 400px) {
+			margin-left: 0;
+		}
+
+		> .title {
+			display: inline-block;
+			color: mix(@panelActiveHeadingColor , @panelActiveBackgroundColor , 70%);
+			margin: 0;
+		}
+
+		.change-resource {
+			//color: #999;
+			background-color: @bookInputBackgroundColor;
+			color: rgba(0, 0, 0, .5);
+			.border-radius(@baseBorderRadius);
+			border: 1px solid @bookInputBorderColor;
+
+			width: 24px;
+			height: 24px;
+			line-height: 24px;
+			display: inline-block;
+			overflow: hidden;
+			top: 5px;
+			left: .25em;
+			font-size: 13px;
+
+			background-size: 18px;
+			background-position: 5px center;
+			text-indent: 24px;
+
+			-webkit-transition: width 0.6s ease-in-out;
+			   -moz-transition: width 0.6s ease-in-out;
+			     -o-transition: width 0.6s ease-in-out;
+				-ms-transition: width 0.6s ease-in-out;
+					transition: width 0.6s ease-in-out;
+
+			&:hover {
+				width: 110px;
+				background-color: @bookInputHoverBackgroundColor;
+				border-color: @bookInputHoverBorderColor;
+			}
+			&:active {
+				background-color: @bookInputFocusBackgroundColor;
+				border-color: @bookInputFocusBorderColor;
+				color: @bookInputFocusColor;
+				.box-shadow(0 0 0 4px @bookInputFocusShadowColor);
+				outline: none;
+				top: 6px;
+
+				.button-text {
+					color: #222;
+				}
+			}
+		}
+		.resources {
+			position: absolute;
+			//top: 50px;
+			left: -30px;
+			//border: 1px solid #999;
+			.border-radius(5px);
+			.box-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+			z-index: @zindexPopover;
+			background: #fff;
+			list-style: none;
+			margin: 0;
+			padding: 10px;
+			min-width: 300px;
+		}
+		li {
+			border-bottom: 1px solid #eee;
+
+			a {
+				padding: 5px 10px;
+				overflow: hidden;
+				color: rgba(0,0,0,.5);
+				line-height: 22px;
+				display: block;
+
+				.title {
+					float: left;
+					display: inline-block;
+					//min-width: 15em;
+				}
+				.price {
+					float: right;
+					display: inline-block;
+					min-width: 3.5em;
+					text-align: right;
+					padding: 0;
+					background: none;
+					box-shadow: none;
+					font-size: 16px;
+					color: rgba(0, 0, 0, 0.3);
+					font-weight: bold;
+					top: 1px;
+					line-height: 22px;
+					border: 0;
+				}
+
+				&:hover {
+					background: rgba(0,0,0,.05);
+					color: rgba(0,0,0,.8);
+					text-shadow: 0 1px 0 rgba(255,255,255,.8);
+					text-decoration: none;
+
+					> .price {
+						color: rgba(0,0,0,.6);
+					}
+				}
+			}
+			&:last-of-type {
+				border-bottom: none;
+			}
+		}
+	}
+
+	input.datepicker,
+	input.timepicker {
+		width: 130px;
+		padding-left: @inputIconWidth !important;
+		text-align: center;
+		cursor: pointer;
+
+		@media (max-width: 400px) {
+			width: 100%;
+			height: 48px;
+			font-size: 24px;
+			background-size: 32px;
+			background-position-x: 10px;
+		}
+	}
+
+	.time {
+		.sl-input {
+			font-size: 0;
+			
+			input,
+			select {
+				font-size: @textSize;
+			}
+		}
+		.time-input {
+			width: 120px;
+			display: inline-block;
+			
+
+			select {
+				width: 100%;
+				.appearance(none);
+				//padding: 5px;
+				//font-size: @textSize;
+
+				@media (max-width: 400px) {
+					width: 100%;
+					padding: 5px;
+					height: 38px;
+					font-size: 18px;
+				}
+			}
+
+			&.hour {
+				width: 75px;
+
+				#hour-input {
+					text-indent: 10px;
+					.border-top-right-radius(0);
+					.border-bottom-right-radius(0);
+					border-right-color: rgba(0, 0, 0, .1);
+					
+					background-position: 8px center;
+					background-size: 16px;
+					padding-left: 40px;
+				}
+
+				@media (max-width: 400px) {
+					width: 40%;
+
+					#hour-input {
+						background-size: 22px;
+						text-indent: 30px;
+						background-position: 10px center;
+						padding-right: 16px;
+						text-align: right;
+						
+						padding-left: 30px;
+						background-position: 8px center;
+						background-size: 1em;
+					}
+					.sl-label-below {
+						padding-right: 14px;
+					}
+				}
+			}
+			&.minute {
+				width: 55px;
+
+				#minute-input {
+					.border-top-left-radius(0);
+					.border-bottom-left-radius(0);
+					border-left: none;
+					text-indent: 8px;
+					background-image: none;
+				}
+			}
+		}
+		//#guest-select,
+		.time-select {
+			width: 130px;
+			//text-indent: 44px;
+			.appearance(none);
+			//padding: 4px;
+			//text-indent: 20px;
+			//font-size: @textSize;
+			
+			padding-left: 40px;
+			background-position: 8px center;
+			background-size: 1em;
+		}
+		@media (max-width: 400px) {
+			#daily-depart {
+				width: 70%;
+				height: 42px;
+				background-size: 26px;
+				background-position-x: 10px;
+				font-size: 22px;
+			}
+		}
+		#event-depart {
+			width: 240px;
+			text-indent: 5px;
+
+			@media (max-width: 400px) {
+				width: 100%;
+				height: 42px;
+				font-size: 18px;
+			}
+		}
+	}
+
+	.guests {
+		margin: 30px 0;
+		padding: 0;
+	}
+	.passenger-type {
+		display: block;
+		margin: 0 0 6px 0;
+
+		select {
+			width: 60px;
+			margin-right: .4em;
+
+			@media (max-width: 400px) {
+				width: 33%;
+				height: 38px;
+				font-size: 18px;
+			}
+		}
+
+// Family icon & tooltip
+		.family-icon {
+			fill: @panelActiveHeadingColor; //rgba(0,0,0,.4);
+			height: 18px;
+			width: 30px;
+			margin: 0 0 -3px 5px;
+		}
+		.guest:hover .family-icon {
+			fill: rgba(0,0,0,.8);	
+		}
+		
+		[data-hint] {
+			position: relative;
+			display: inline-block;
+		}
+		[data-hint]:before, [data-hint]:after {
+			position: absolute;
+			-webkit-transform: translate3d(0, 0, 0);
+			-moz-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			visibility: hidden;
+			border-radius: 3px;
+			opacity: 0;
+			z-index: 1000000;
+			pointer-events: none;
+			-webkit-transition: 0.3s ease;
+			-moz-transition: 0.3s ease;
+			transition: 0.3s ease;
+			-webkit-transition-delay: 0ms;
+			-moz-transition-delay: 0ms;
+			transition-delay: 0ms;
+		}
+		[data-hint]:hover:before, [data-hint]:hover:after, [data-hint]:focus:before, [data-hint]:focus:after {
+			visibility: visible;
+			opacity: 1;
+		}
+		[data-hint]:hover:before, [data-hint]:hover:after {
+			-webkit-transition-delay: 100ms;
+			-moz-transition-delay: 100ms;
+			transition-delay: 100ms;
+		}
+		[data-hint]:before {
+			content: '';
+			position: absolute;
+			background: transparent;
+			border: 6px solid transparent;
+			z-index: 1000001;
+		}
+		[data-hint]:after {
+			content: attr(data-hint);
+			background: #383838;
+			color: white;
+			padding: 8px 10px;
+			font-size: 12px;
+			line-height: 12px;
+			white-space: nowrap;
+		}
+
+		.hint--right:before {
+			margin-left: -12px;
+			margin-bottom: -6px;
+		}
+		.hint--right:after {
+			margin-bottom: -14px;
+		}
+		.hint--right:before, .hint--right:after {
+			left: 100%;
+			bottom: 50%;
+		}
+		.hint--right:hover:after, .hint--right:hover:before, .hint--right:focus:after, .hint--right:focus:before {
+			-webkit-transform: translateX(8px);
+			-moz-transform: translateX(8px);
+			transform: translateX(8px);
+			
+			@media (max-width: 400px) {
+				-webkit-transform: translateX(-30px);
+				-moz-transform: translateX(-30px);
+				transform: translateX(-30px);
+			}
+		}
+	}
+
+	// TOUR UPSELLS
+	// --------------------------------------------------
+	.upsells {
+		margin: 30px 0 10px 0;
+
+		.sl-input {
+			@media (max-width: 400px) {
+				width: 100%;
+			}
+			@media (min-width: 401px) and (max-width: 640px) {
+				width: 80%;
+			}
+			@media (min-width: 641px) {
+				width: 75%;
+			}
+		}
+	}
+	.upsell {
+		display: block;
+		padding: 0;
+		margin: 0 0 10px 0;
+		font-size: 14px;
+
+		.clearfix();
+
+		&:hover {
+			background: lighten(@panelActiveBackgroundColor, 5%);
+			//.border-radius(8px);
+		}
+		.quantity {
+			display: inline-block;
+			width: 60px;
+			margin: 0 8px 0 0;
+			float: left;
+
+		}
+		.description {
+			display: inline-block;
+			width: 70%;
+			margin: 0 0 .4em 0;
+			color: rgba(0, 0, 0, .6);
+			top: .4em;
+			position: relative;
+			font-size: 14px;
+
+			@media (max-width: 979px) {
+				width: 55%;
+			}
+		}
+		.price {
+			display: inline-block;
+			float: right;
+			font-size: 1em;
+			color: rgba(0, 0, 0, .6);
+			text-shadow: 0 1px 0 #FFF;
+
+			// OVERWRITE DEFAULT PRICE DESIGN
+			border: none;
+			background: none;
+			padding: 0;
+			line-height: 1em;
+			top: .7em;
+
+			> .amount {
+				color: rgba(0, 0, 0, .8);
+			}
+		}
+	}
+
+	// OCCUPANCY & LIVE RATE DISPLAY
+	// --------------------------------------------------
+	.occupancy {
+		margin: -52px 20% 0 0;
+		padding: 6px 10px;
+		background: lighten(@panelActiveBackgroundColor, 10%);
+		.border-radius(@baseBorderRadius / 2);
+		.max-radius(14px);
+		display: inline-block;
+		float: right;
+
+		font-family: @h4Font;
+		text-transform: @headingTransform;
+		font-size: .8em;
+		color: desaturate(darken(@panelActiveBackgroundColor, 50%), 50%);
+
+		box-shadow: inset 0 1px 0 lighten(@panelActiveBackgroundColor, 90%),
+		0 1px 0 desaturate(darken(@panelActiveBackgroundColor, 20%), 20%);
+		
+		@media (max-width: 400px) {
+			margin: -52px 0 10px 0;
+		}
+		
+		.guests {
+			margin: 5px 0;
+			display: block;
+		}
+		.desc {
+			width: 90px;
+			display: inline-block;
+		}
+		.value {
+			background: #5CC42B;
+			border-radius: 44px;
+			padding: 0px 2px 4px 2px;
+			width: 22px;
+			height: 22px;
+			line-height: 22px;
+			display: inline-block;
+			text-align: center;
+
+			/*font-family: HeadingBold, "Gill Sans", "Trebuchet MS", Calibri, sans-serif;*/
+
+			font-family: @h3Font;
+			text-transform: @headingTransform;
+			color: #FFFCD0;
+			text-shadow: 0 1px 1px rgba(0, 0, 0, .4);
+			box-shadow: inset 0 1px 2px rgba(0, 0, 0, .5),
+			0 1px 0 rgba(255, 255, 255, 1);
+
+			&.max {
+				background: #C4922B;
+			}
+		}
+		// LIVE RATE
+		.rate {
+			border-top: 1px solid rgba(0, 0, 0, .1);
+			box-shadow: inset 0 1px 0 rgba(255, 255, 255, .8);
+			margin: 0 -10px;
+			padding: 0 10px 8px;
+		}
+	}
+	//.occupancy
+
+}
+
+// RENTALS fix
+
+&.rental .booking-details input.datepicker {
+	width: 180px; 
+}
+
+
+// fix for iOS safari, to hide blinking cursor
+&.phone-device,
+&.tablet-device {
+
+	.datepicker,
+	.timepicker {
+
+		&:focus {
+			color: transparent;
+			cursor: none;
+			text-indent: -9999em;
+		}
+	}
+}
+
+
+
+// TOUR BUNDLES
+// ---------------------------------------------
+.booking-components {
+	.bundle-component {
+		border-top: 1px solid fade(@panelActiveHeadingColor, 10%);
+		margin-top: 10px;
+		
+		.panel-title {
+			margin: 0;
+			padding: 10px 20px 10px 20%;
+			
+			@media (max-width: 400px) {
+				padding: 10px 0;
+			}
+		}
+		&:only-of-type {
+			border-top: 0;
+			margin-top: 0;
+
+			.panel-title {
+				display: none;
+			}
+		}
+	}
+	.nav .button {
+		margin: 40px 0 0 0;
+	}
+	&.collapse {
+		.bundle-component,
+		.next.button {
+			display: none;
+		}
+	}
+}

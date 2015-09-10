@@ -1,0 +1,111 @@
+// ------------------------------------------------------
+// PHONE CUSTOMISATIONS
+// last edit: 5.6.3
+// ------------------------------------------------------
+
+.phone-device #ui-datepicker-div {
+	top: 0!important;
+	left: 0!important;
+	right: 0;
+	bottom: 0;
+	padding: 10px 20px!important;
+	
+	.border-radius(0);
+	
+	box-shadow: 0 0 0 600px rgba(0,0,0,0.6), 
+				0 2px 6px rgba(0,0,0,0.8);
+	
+	.ui-datepicker-header {
+		height: 15%;
+		padding: 7.5% 0;
+		
+		th {
+			//height: 50px;
+			line-height: 100%; //50px
+		}
+	}
+	
+	.ui-datepicker-calendar {
+		height: 80%;
+		
+		.ui-state-default {
+			line-height: 400%;
+		}
+	}
+	.ui-priority-primary {
+		width: 100%;
+	}
+	
+// Calendar with time input (slider)
+// -----------------------------------		
+	&.sl-timepicker-slider {
+		
+		.ui-datepicker-header {
+			height: 7%;
+			padding: 2.5% 0;
+		}
+		.ui-datepicker-calendar {
+			height: auto;
+			margin-bottom: 7%; //2.5%;
+			
+			.ui-state-default {
+				line-height: 300%;
+			}
+		}
+		.ui-timepicker-div {
+			margin: 0 0 5% 0;
+		}
+		.ui-datepicker-buttonpane {
+			height: 10%;
+		}
+	}
+
+// Landscape Phone
+// -----------------------------------	
+	@media only screen and (orientation : landscape) {
+		.ui-datepicker-header {
+			height: 10%;
+			padding: 2%;
+		}
+		.ui-datepicker-calendar {
+			height: 85%;
+			width: 70%;
+			margin: 0 auto;
+			
+			.ui-state-default {
+				line-height: 250%;
+			}
+		}
+		
+		&.sl-timepicker-slider {
+		
+			.ui-datepicker-header,
+			.ui-datepicker-calendar {
+				width: 50%;
+				float: left;
+				clear: both;
+			}
+			.ui-timepicker-div {
+				margin: 0 0 2% 0;
+				float: right;
+				width: 45%;
+				
+				.ui_tpicker_hour,
+				.ui_tpicker_minute {
+					width: 100%;
+					padding: 8px 10px;
+					box-sizing: border-box;
+					margin: 0px 0 10px 0;
+				}
+			}
+			
+			.ui-datepicker-buttonpane {
+				height: 10%;
+				float: right;
+				width: 45%;
+				margin-top: 10px;
+			}
+		}
+	}
+	
+}

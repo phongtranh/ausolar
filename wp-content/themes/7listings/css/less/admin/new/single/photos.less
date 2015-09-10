@@ -1,0 +1,88 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// PHOTOS TAB - single listing
+// last edit: 5.3
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+
+// PHOTOS CONTAINER
+// --------------------------------------------------
+.photo-detail-container {
+	display: block;
+	margin: 2px -10px;
+
+	padding: 10px;
+	border: 1px solid transparent;
+
+	.text-shadow-emboss;
+	.border-radius (@tab-content-box-radius);
+	.super-animation;
+
+	&:hover {
+		border: 1px solid @wp-grey-light;
+		box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+		cursor: row-resize;
+	}
+	&:only-child:hover {
+		border-color: transparent;
+		background: none;
+		cursor: default;
+		//.transition(none);
+	}
+	.sl-label,
+	.sl-input,
+	label,
+	.star,
+	img {
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: .5em;
+	}
+	
+	> label {
+		width: 120px;
+		margin: 16px 0 0 0;
+	}
+	.sl-label {
+		width: 11.25em;
+	}
+	.star {
+		cursor: pointer;
+		color: #999;
+	}
+	.dashicons-star-filled {
+		color: #ffbd5c;
+	}
+	.delete-file.button {
+		margin: 9px 0 0 0;
+	}
+}
+
+.ui-sortable-helper {
+	box-shadow: 0 6px 10px -6px rgba(0,0,0,.4);
+}
+
+.ui-sortable .ui-state-highlight {
+	height: 6em;
+}
+
+.photo-detail-container img,
+.upload img {
+	.thumb();
+}
+
+.uploaded input 	{color: @wp-grey-dark; .input-huge;}
+input.no-value 		{color: @wp-grey-light;}
+
+#hotel-photos .upload label, 
+#hotel-photos .upload:hover label {
+	cursor: default;
+}
+
+.photos hr {
+	border-bottom: transparent;
+	padding: 2em 0;
+	box-shadow: none;
+}

@@ -1,0 +1,271 @@
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// SINGLE WP POST
+// last edit: 5.2
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+
+//	CONTENTS
+// -----------------------
+//  - FEATURED TITLE
+//  - POST FORMATS
+//  - SECTIONS
+//  - ARTICLE
+//  - AUTHOR INFO BOX
+//  - RELATED & RECENT POSTS
+// -----------------------
+
+.single-post {
+	// force css to this page only
+
+	// -------------------------------------------------------------
+	// FEATURED HEADER
+	// -------------------------------------------------------------
+	#featured {
+
+		.title {
+			margin-bottom: @baseLineHeight;
+		}
+
+		.entry-meta-wrapper {
+			margin: .5em 0 0 0;
+
+			/*
+				.categories:before,
+				.date:before {
+					content: "\f073";
+					font-family: FontAwesome;
+					margin-right: .3em;
+					font-size: 1.1em;
+					position: relative;
+				}
+				.categories:before { content: "\f02b";}
+			*/
+			.tags {
+				display: block;
+
+				&:before {
+					content: "\f02b";
+					font-family: FontAwesome;
+					margin-right: .3em;
+					font-size: 1.1em;
+					position: relative;
+				}
+			}
+			/*
+				.comments-link {
+					float: right;
+					margin: .5em 1em 0 0;
+
+					a:before {
+						content: "\f075";
+						font-family: FontAwesome;
+						margin-right: .5em;
+						font-size: 1.2em;
+						position: relative;
+					}
+				}
+				*/
+		}
+	}
+
+	// POST FORMATS
+	//
+	&[class*="single-format-"] {
+		#featured .title:before {
+			font-family: FontAwesome;
+			font-size: .75em;
+			margin-right: .5em;
+		}
+	}
+	&.single-format-video 		#featured .title:before 	{ content: "\f04b"; }
+	&.single-format-audio 		#featured .title:before 	{ content: "\f028"; }
+	&.single-format-image 		#featured .title:before 	{ content: "\f03e"; }
+	&.single-format-quote 		#featured .title:before 	{ content: "\f10e"; }
+	&.single-format-link 		#featured .title:before 	{ content: "\f0c1"; }
+	&.single-format-gallery 	#featured .title:before 	{ content: "\f00a"; }
+	&.single-format-aside 		#featured .title:before 	{ content: "\f069"; }
+	&.single-format-status 		#featured .title:before 	{ content: "\f071"; }
+	&.single-format-chat 		#featured .title:before 	{ content: "\f0e6"; }
+
+
+
+	#content {
+
+		// -------------------------------------------------------------
+		// SECTIONS OVERALL
+		// -------------------------------------------------------------
+		// #description,
+		.comments-link,
+		#author-details,
+		.related,
+		.next-prev,
+		.recent,
+		.popular,
+		.comments {
+			display: block;
+			clear: both;
+			.clearfix();
+
+			margin-bottom: (@baseLineHeight * 3);
+
+			@media (min-width: 768px) and (max-width: 979px) {
+				margin-bottom: (@baseLineHeight * 2);
+			}
+
+			@media (max-width: 767px) {
+				margin-bottom: (@baseLineHeight * 1.5);
+			}
+		}
+
+		// -------------------------------------------------------------
+		// ARTICLE
+		// -------------------------------------------------------------
+		#featured-post-image {
+			float: left;
+			max-width: 50%;
+			margin: 0 @baseLineHeight @baseLineHeight 0;
+
+			@media (max-width: 340px) {
+				max-width: 100%;
+				margin: 0 @baseLineHeight 0 0;
+			}
+
+			.photo {
+				.max-radius(40px);
+			}
+		}
+
+		#description {
+			display: block;
+
+			@media (min-width: 768px) {
+				width: auto;
+			}
+
+			* {
+				max-width: 100%;
+			}
+
+			p:first-child {
+				font-size: 1.4em;
+				line-height: 1.4em;
+				margin-bottom: 1em;
+			}
+		}
+
+		// -------------------------------------------------------------
+		// AUTHOR INFO BOX
+		// -------------------------------------------------------------
+		#author-details {
+
+			h3 {
+				margin: 0 0 (@baseLineHeight / 2) 0;
+			}
+			.thumbnail {
+				float: left;
+				width: 80px;
+				margin: 0 (@baseLineHeight / 2) @baseLineHeight 0;
+
+				@media (max-width: 340px) {
+					margin-bottom: (@baseLineHeight / 2);
+				}
+			}
+			.details {
+				display: table;
+
+				@media (max-width: 340px) {
+					display: block;
+					clear: both;
+				}
+			}
+			.name {
+				margin: 0 0 (@baseLineHeight / 2) 0;
+			}
+			.social-media {
+				font-size: 1em;
+				margin-bottom: (@baseLineHeight / 2);
+
+				a {
+					//font-size: 1.5em;
+
+					&:before {
+						.border-radius(@baseBorderRadius * .75);
+					}
+				}
+			}
+			.bio {
+				font-size: .95em;
+			}
+		}
+
+		// -------------------------------------------------------------
+		// POST LINKS - Next Previous
+		// -------------------------------------------------------------
+		.next-prev {
+			display: block;
+
+			.post {
+				.meta-nav {
+					color: @h3Color;
+					font-size: (@h3Size * .75);
+					font-family: @h3Font;
+					text-transform: @headingTransform;
+				}
+				@media (min-width: 768px) {
+					.thumbnail {
+						width: 10%;
+						margin-right: 2.5%;
+					}
+				}
+				/*
+				.next {
+
+					&:after {
+						content: "\f061";
+						font-family: FontAwesome;
+						margin-left: .5em;
+						position: relative;
+					}
+				}
+				.prev {
+
+					&:before {
+						content: "\f060";
+						font-family: FontAwesome;
+						margin-right: .5em;
+						position: relative;
+					}
+				}
+				*/
+			}
+		}
+
+		// -------------------------------------------------------------
+		// POPULAR & RECENT POSTS
+		// design: listings.less
+		// -------------------------------------------------------------
+		.recent,
+		.popular {
+			h3 {
+				margin: 0 0 (@baseLineHeight / 2) 0;
+			}
+
+			@media (min-width: 768px) {
+				width: 45%;
+				display: inline-block;
+				margin-right: 9%;
+			}
+		}
+		.popular {
+			@media (min-width: 768px) {
+				margin-right: 0;
+			}
+		}
+
+		// -------------------------------------------------------------
+	}
+	// END: #content
+}
+
+// END: .single.post

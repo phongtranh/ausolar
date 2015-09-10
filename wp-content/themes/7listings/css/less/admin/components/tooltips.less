@@ -1,0 +1,93 @@
+.sl-tooltip {
+	text-decoration: none;
+	
+	> .icon {
+		margin: 0 .4em;
+		text-decoration: none;
+		color: rgba(0,0,0,.15);
+		
+		&:before {
+			font-family: FontAwesome;
+			content: "\f05a";
+			font-size: 1em;
+			position: relative;
+		}
+		&:hover {
+			cursor: help;
+			//.pulsing(1s);
+		}
+	}
+	&.info {
+		color: @wp-blue-dark;
+		> .icon {
+			&:hover	 { color: @wp-blue-dark; }
+		}
+	}
+	&.warning {
+		color: @orange;
+		> .icon {	
+			&:hover	 { color: @orange; }
+			&:before {
+				content: "\f071";
+			}	
+		}
+	}
+	&.message {
+		color: @green;
+		> .icon {
+			&:hover	 { color: @green; }
+			&:before {
+				font: normal 1em/1 'dashicons';
+				content: '\f101';
+			}
+		}
+	}
+	&.seo {
+		color: #FFF;
+		background: rgba(0,0,0,.15);
+		padding: 0 4px;
+		border-radius: 99px;
+		font-size: 9px;
+		
+		&:hover	 { background: @green; }
+		
+	}
+}
+
+.tooltip-inner {
+  min-width: 100px;
+  text-shadow: 0 1px 1px #000;
+}
+
+
+// --------------------------------------------------
+// HINTS
+// --------------------------------------------------
+
+// TOP HINTS - LINKS TO HELP ARTICLES
+// --------------------------------------------------
+.hint {
+	float: right;
+	width: 25%;
+	background: #FFFFCC url("@{image-path}admin/buttons/warning-32x32.png") no-repeat 14px 16px;
+	border: 1px solid #FFCC66;
+	border-radius: 3px;
+	padding: 10px 10px 10px 60px;
+}
+.hint p {
+	margin: 0;
+}
+
+// PRODUCT SETTINGS
+// --------------------------------------------------
+.hint.seo {
+	float: none;
+	clear: both;
+	margin: 80px 0 20px 0;
+}
+.hint.seo #product_label {
+	margin-bottom: 10px;
+	display: block;
+}
+
+

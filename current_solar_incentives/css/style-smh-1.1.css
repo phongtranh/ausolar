@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'LucidaGrandeRegular';
+    src: url('fonts/lucida_grande-webfont.eot');
+    src: url('fonts/lucida_grande-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lucida_grande-webfont.woff') format('woff'),
+         url('fonts/lucida_grande-webfont.ttf') format('truetype'),
+         url('fonts/lucida_grande-webfont.svg#LucidaGrandeRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { margin: 0; padding: 0; outline: 0; }
+
+body, html { height: 100%; }
+
+body {
+    font-size: 12px;
+    line-height: 16px;
+    font-family: arial, sans-serif;
+    color: #555555;
+    background: #fff;
+    min-width: 100%;
+}
+
+a { color: #0252aa; text-decoration: none; cursor: pointer; }
+a:hover { text-decoration: underline; }
+a img { border: 0; }
+
+ol, ul { list-style: none outside none; }
+
+input, textarea, select { font-size: 12px; color: #555555; font-family: helvetica, arial, sans-serif; }
+
+.cl { display: block; height: 0; font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+.notext { font-size: 0; line-height: 0; text-indent: -4000px; }
+.left, .alignleft { float: left; display: inline; }
+.right, .alignright { float: right; display: inline; }
+
+.widgets ul li { padding: 0; }
+
+.sq_type { width: 298px; height: 150px; padding: 0 2px; background: #fff; }
+.sq_type .top { height: 30px; }
+.sq_type .top h3 { line-height: 30px; font-size: 18px; font-weight: normal; color: #000000; font-family: georgia, serif; }
+.sq_type .tabs { height: 120px; overflow: hidden; }
+.sq_type .tabs .nav { height: 21px; border-bottom: solid 2px #5b8d19; }
+.sq_type .tabs .nav ul li { float: left; display: inline; height: 21px; margin-left: 1px; padding: 0; }
+.sq_type .tabs .nav ul li.first { margin-left: 0; }
+.sq_type .tabs .nav ul li.first a { width: 75px; }
+.sq_type .tabs .nav ul li a { float: left; width: 73px; font-size: 11px; line-height: 20px; height: 20px; color: #ffffff; font-weight: bold; border-bottom: solid 1px #fff; background: #262626; text-align: center; }
+.sq_type .tabs .nav ul li.active a,
+.sq_type .tabs .nav ul li a:hover { border-bottom: solid 1px #5b8d19; background: #5b8d19; text-decoration: none; }
+.sq_type .tabs .tabs-cnt { height: 87px; }
+.sq_type .tabs .cnt { height: 64px; overflow: hidden; }
+.sq_type .tabs .cnt .price { width: 120px; float: left; display: inline; padding: 3px 0 0 0; height: 40px; line-height: 40px; font-size: 36px; color: #008f00; font-weight: bold; }
+.sq_type .tabs .cnt .price span { font-size: 14px; position: relative; top: -17px; }
+.sq_type .tabs .cnt .text { width: 150px; float: right; display: inline; padding: 8px 0 0 0; height: 40px; font-size: 12px; line-height: 14px; color: #000000; text-align: right; }
+.sq_type .tabs .cnt .text-2 { width: 110px; float: left; display: inline; text-align: left; margin-left: 15px; }
+.sq_type .tabs .cnt .small-text { display: block; font-size: 9px; line-height: 12px; color: #424242; }
+.sq_type .tabs .cnt .b-text { padding: 5px 0 0 10px; width: 165px; float: left; display: inline; font-size: 18px; line-height: 20px; color: #ffffff; font-weight: bold; }
+.sq_type .tabs .cnt .b-text .small-text { color: #cccccc; font-size: 9px; white-space: nowrap; letter-spacing: -0.5px; }
+.sq_type .tabs .cnt .image { width: 86px; height: 54px; background: #2f379d; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; padding: 3px; margin: 1px 4px 0 0; float: right; display: inline; }
+.sq_type .tabs .cnt .image-2 { width: 51px; height: 63px; float: right; display: inline; }
+.sq_type .tabs .table-1 { position: relative; top: -3px; padding: 0; }
+.sq_type .tabs .tab .bottom { padding: 4px 0 0 0; border-top: solid 1px #7f7f7f; }
+.sq_type .tabs .tab .bottom a.logo { float: left; display: inline; }
+.sq_type .tabs .tab .bottom a.btn { float: right; display: inline; font-size: 0; line-height: 0; text-indent: -4000px; }
+.sq_type .tabs .tab .bottom a.get-btn-2 { width: 155px; height: 23px; background: url(images-smh/btn-type4.html) no-repeat 0 0; padding: 0 5px; text-align: left; font-size: 12px; line-height: 23px; color: #fff; font-weight: bold; font-family: arial, sans-serif; text-shadow: #502200 0 0 2px; text-indent: 3px; }
+.sq_type .tabs .tab .bottom a.btn:hover { background-position: 0 bottom; text-decoration: none; }
+
+/* ==========================================================================
+	#New Widget - Styles
+========================================================================== */
+.sq_type .tabs .tab .bottom .field { width: 80px; margin-left: 3px; padding: 2px 1px; }
+.bottom img { float: left; height: 28px; margin-right: 3px; }
+.btn-orange { width: 170px; height: 22px; background: #d77025; font-size: 12px !important; line-height: 22px !important; text-indent: 0 !important; color: #fff; text-align: center; font-weight: bold; border: none; }
+.btn-orange:hover { background: #c25e1b; }
+
+/* ==========================================================================
+    #Widget Alt
+========================================================================== */
+.widget-alt .field { margin-left: 6px !important; }
+.widget-alt .bottom img { margin-right: 0; height: 22px; }
+.widget-alt .btn-orange { width: 86px; }

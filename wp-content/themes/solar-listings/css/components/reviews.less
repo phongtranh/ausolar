@@ -1,0 +1,53 @@
+#comments #respond {
+	input[aria-required="true"],
+	#comment[aria-required="true"]  {
+		border-color: #C8C8C8;
+		background: rgba(0, 0, 0, 0.025);
+		
+		&:focus { 
+			border-color: rgba(82, 168, 236, 1);
+			background: rgba(82, 168, 236, .05); 
+		}
+	}
+	.required {
+		color: red;
+		font-size: 26px;
+		margin: 0 4px 0 -4px;
+	}
+	label 	{ color: #555; }
+	hr 		{ margin: 10px 0; }
+	
+	.horizontal {
+		margin: 0;
+		
+		label { width: 30%; display: inline-block; }
+		input { width: 63%; }
+	}
+	.vertical {
+		.suburb-city {
+			display: inline-block;
+			width: 59%;
+			margin: 0 5% 0 0;
+			
+			input 	{ width: 90%; /*.box-sizing(border-box);*/ }
+		}
+		.state {
+			display: inline-block;
+			width: 34%;	
+			margin: 0;
+			
+			select 	{ width: 100%; }
+		}
+	}
+	.review-text {
+		label 		{ display: inline-block; }
+		.required 	{ margin: 0; }
+	}
+}
+.comment-location {
+	font-size: .75em;
+	color: darken(@bodyBackground, 25%);
+	font-weight: lighter;
+	
+	.suburb, .state { font-weight: normal; }
+}

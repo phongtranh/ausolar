@@ -1,0 +1,76 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// PRICE BOXES
+// last edit: 5.6.6
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+
+// GENERAL SETUP
+// --------------------------------------------------
+.price {
+	display: inline-block;
+	position: relative;
+	margin: 0;
+	width: auto;
+
+	padding: .5em 1em;		
+	.border-radius(@baseBorderRadius);
+	//border: 1px solid mix(@priceBackground, @priceText, 90%);
+	
+	background-color: @priceBackground;
+
+	font: @buttonPrimaryFontSize @buttonPrimaryFont;
+	color: mix(@priceBackground, @priceText, 40%);
+	//text-align: right;
+	font-weight: normal;
+	
+	//.textguard(@priceText,@priceBackground);
+	
+	.amount {
+		color: @priceText;
+		font-weight: bold;
+		//font-size: 1.2em; 
+		margin-left: .1em;
+	}
+	del { 
+		text-decoration: line-through;
+		
+		.amount {
+			font-weight: normal;
+		}
+	}
+	ins { text-decoration: none; }
+}
+
+
+
+// SALE - WOOCOMMERCE
+// --------------------------------------------------
+.sale .price {
+	background-color: @salePriceLabel;
+	color: @salePriceText;
+	border-color: mix(@salePriceLabel, @salePriceText, 90%);
+	
+	del,
+	.amount {
+		color: mix(@salePriceText, @salePriceLabel, 50%);
+		.textguard(@salePriceText,@salePriceLabel);
+	}
+	ins,
+	.amount {
+		color: @salePriceText;
+		.textguard(@salePriceText,@salePriceLabel);
+	}
+}
+
+
+@media (max-width: 320px) {
+	[class*="columns-"] .product { 
+		.price del { 
+			display: none;
+		}
+	}
+}
+

@@ -1,0 +1,80 @@
+/* CSS: 7 Listings - BASIC   */
+// --------------------------------------------------
+// Theme Name:     7 Listings - BASIC
+// Description:    General Stylesheet
+// Author:         7 Listings
+// Author URI:     http://www.7listings.net
+// Version:        5.6.6
+// --------------------------------------------------
+
+
+
+// Bootstrap 2.3.1 - CUSTOMIZED
+@import "components/bootstrap-2.3.1/variables.less";		// Used & customized variables are put into 7variables.less
+@import "components/bootstrap-2.3.1/mixins.less";			// BS: and used in non BS styles
+
+@import "components/bootstrap-2.3.1/bootstrap.less";		// NOT used .less components are not imported
+@import "components/bootstrap-2.3.1/responsive.less";		// BS Default
+
+
+
+// Core variables and mixins
+@import "components/7variables.less"; 						// Modify this for custom colors, font-sizes, etc
+@import "components/7mixins.less";							// Mixins for styling
+
+
+
+@import "components/fonts.less";
+
+@import "components/animations.less";		// CUSTOM ANIMATIONS
+
+@import "components/layout/style.less";			// LAYOUT
+
+
+
+
+// Homepage
+@import "components/pages/homepage/style.less";
+
+
+
+// Common
+@import "components/common/style.less";
+
+@import "components/listings/style.less";
+
+
+
+// Archives
+@import "components/post/archive.less";
+
+
+
+// Single Post
+@import "components/post/single.less";
+
+@import "components/comments-reviews.less";
+
+
+@import "components/common/shortcodes.less";
+
+
+
+// Pages
+@import "components/pages/contact-us.less";
+
+@import "components/pages/404.less";
+
+
+
+// Rest of Bootstrap
+@import "components/bootstrap-2.3.1/bootstrap-components.less";		// Bootstrap components that are not required for initial load
+@import "components/bootstrap-2.3.1/bootstrap-changes-fixes.less";					// Overwrites and Fixes for BS styles
+
+// CSS FIXES
+@import "components/fixes.less";
+
+
+
+
+@import "components/print.less";

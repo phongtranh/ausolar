@@ -1,0 +1,87 @@
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// BOOKING RESOURCES - ACCOMMODATION, TOUR & RENTALS
+// last edit: 5.6.6
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+
+
+.resources {
+	clear: both;
+	padding-top: (@baseLineHeight * 1.5);
+	
+	> .title {
+		margin-bottom: @baseLineHeight;
+	}
+	
+	.resource { 
+		margin-bottom: (@baseLineHeight * 1.5);
+		.clearfix();
+		
+		.title { 
+			margin: 0 0 (@baseLineHeight / 2) 0; 
+			line-height: 1em;
+		}
+		.price,
+		.button {
+			font-size: .85em;
+			margin: 0 .4em .4em 0;
+		}
+	}
+}
+
+
+
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// RESPONSIVE SIZES
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+@media (min-width: 980px) {
+	.resources {
+		.resource {
+			float: left;
+			width: 31%;
+			margin-right: 3.5%;
+			
+			&:nth-of-type(3n+1) { clear: left; }
+			&:nth-of-type(3n+3) { margin-right: 0; }
+		}
+	}
+	// Layout with sidebar
+	.left .resources,
+	.right .resources {
+		.resource {
+			width: 45%;
+			margin-right: 5%;
+			
+			&:nth-of-type(2n+1) { clear: left; }
+			&:nth-of-type(2n+2) { margin-right: 0; }
+			
+			&:nth-of-type(3n+1) { clear: none; }
+			&:nth-of-type(3n+3) { margin-right: 5%; }
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	.resources {
+		.resource {
+			width: 45%;
+			margin-right: 5%;
+			float: left;
+			
+			&:nth-of-type(2n+1) { clear: left; }
+			&:nth-of-type(2n+2) { margin-right: 0; }
+		}
+	}
+	// Layout with sidebar
+	.left .resources,
+	.right .resources {
+		.resource {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: @baseLineHeight;
+		}
+	}
+}

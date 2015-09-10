@@ -1,0 +1,131 @@
+// --------------------------------------------------
+// SUMMARY / RIGHT COLUMN
+// last edit: 5.8.3
+// --------------------------------------------------
+#sidebar.summary {
+	background-color: #fff;
+	padding: @baseLineHeight;
+
+	.title {
+		margin: 0;
+	}
+
+	> .thumbnail {
+		margin: 0 0 1em 0;
+		width: 100%;
+
+		.photo {
+			.max-radius(40px);
+		}
+	}
+
+
+	// INFO COLUMNS
+	// --------------------------------------------------
+	.row {
+		margin: 7px 0;
+		line-height: 1.2em;
+
+		.left {
+			width: 65%;
+			float: left;
+			clear: both;
+			color: rgba(0,0,0,.5);
+			font-size: 13px;
+		}
+		.right {
+			width: 35%;
+			float: right;
+			text-align: right;
+			font-size: 16px;
+			color: rgba(0,0,0,.7);
+			font-weight: bold;
+		}
+		
+		&.depart {
+			.left {
+				width: 35%;
+			}
+			.right {
+				width: 65%;
+			}
+		}
+	}
+
+	.checkout-time,
+	.extra-guests { 
+		margin: -14px 0 14px 0;
+	}
+	
+	h2 {
+		color: #D4D4D4;
+		margin: 0 0 10px 0;
+	}
+	h3 {
+		color: #979797;
+	}
+	h4 {
+		color: #BFBFBF;
+		margin: @baseLineHeight 0 0 0;
+		
+	}
+
+
+// SUBTOTAL
+// --------------------------------------------------
+	.subtotal {
+		//border-top: 1px dotted #ddd;
+		display: none;
+	}
+
+
+// TOTAL
+// --------------------------------------------------
+	.total {
+		font-size: 22px;
+		border-top: 1px solid rgba(0,0,0,.1);
+		padding-top: 20px;
+		margin: 20px 0;
+
+		.left 	{ 
+			width: 50%;
+		}
+		.right 	{ 
+			width: 50%; 
+			font-size: 24px; 
+			color: #000;
+		}
+	}
+
+// REVIEWS
+// --------------------------------------------------	
+	.review-title {
+		margin-top: (@baseLineHeight * 3);
+	}
+	.reviews {
+		.entry-title {
+			margin: 0;
+		}
+	}
+	
+// TOUR BUNDLES
+// --------------------------------------------------	
+	&.tour-bundle-summary {
+		.passengers {
+			margin-bottom: (@baseLineHeight * 2);
+			
+			.total_guests {
+				border-top: 1px solid rgba(0,0,0,.1);
+				padding-top: 10px;
+			}
+		}
+		.tour-summary {
+			margin-bottom: (@baseLineHeight * 1.5);
+			
+			.passenger,
+			.total {
+				display: none;
+			}
+		}
+	}
+}

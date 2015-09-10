@@ -1,0 +1,416 @@
+// ----------------------------------------
+// FEATURED CPT SEARCH
+// last edit: 5.8.2
+// ----------------------------------------
+
+
+@featuredSearchActionColor: #22AA01; //@buttonPrimaryBackground;
+
+
+#featured-search {
+	background-position: center center;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	   	 -o-background-size: cover;
+		 	background-size: cover;
+	
+	.title {
+		color: #fff;
+		text-shadow: 0 1px 2px rgba(0,0,0,.6);
+		margin-bottom: .2em;
+	}
+	
+	.search-wrapper {
+		background: rgba(0,0,0,.6);
+		display: inline-block;
+		padding: @baseLineHeight;
+		
+		.box-sizing(border-box);
+		.border-radius-input-max((@baseBorderRadius * 2),(@baseLineHeight * 1.5));
+		
+		//.transition(all ease-in-out .6s);
+		
+		.type-wrapper {
+			display: inline-block;
+			margin-bottom: 30px;
+			
+			a {
+				display: inline-block;
+				padding-top: 48px;
+				font-size: 11px;
+				min-width: 52px;
+				background-position: center top;
+				margin-right: 20px;
+				text-align: center;
+				text-decoration: none;
+				color: #fff;
+				.opacity(40);
+				
+				&.active,
+				&:hover {
+					.opacity(100);
+					-webkit-filter: drop-shadow(0 1px 2px rgba(0,0,0,.75));
+					   -moz-filter: drop-shadow(0 1px 2px rgba(0,0,0,.75));
+					    -ms-filter: drop-shadow(0 1px 2px rgba(0,0,0,.75));
+						 -o-filter: drop-shadow(0 1px 2px rgba(0,0,0,.75));
+						 	filter: drop-shadow(0 1px 2px rgba(0,0,0,.75));
+					
+					text-shadow: 0 1px 1px rgba(0,0,0,.5);
+				}
+				
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+		}
+		.accommodations-icon,
+		.tours-icon,
+		.rentals-icon,
+		.attractions-icon {
+			fill: #fff;
+			display: block;
+			margin: 0 auto;
+		}
+		
+		
+					
+		.search-inputs {
+			display: block;
+			margin: 0;
+			
+			> div {
+				box-sizing: border-box;
+				margin: 0;
+				float: left;
+			}
+		}
+		
+		
+		input[type="search"],
+		.select2-choice {
+			width: 100%;
+			display: block;
+			height: 32px;
+			padding-left: 32px;
+			.box-sizing(border-box);
+			border: none;
+			background-color: rgba(255,255,255,.75);
+			
+			color: rgba(0,0,0,.6);
+			.placeholder(rgba(0,0,0,.6));
+			
+			&:hover {
+				background-color: rgba(255,255,255,.9);
+				box-shadow: 0 0 0 1px rgba(0,0,0,.8), 
+							0 0 0 4px rgba(0,0,0,.2);
+			}
+			&:focus {
+				color: #000;
+				background-color: rgba(255,255,255,1);
+				box-shadow: 0 0 0 1px rgba(0,0,0,1), 
+							0 0 0 2px rgba(0,0,0,.1);
+			}
+			/*
+			&:last-of-type {
+				margin-bottom: @baseLineHeight;
+			}
+			*/
+		}
+		.keyword {
+			background-position: 6px center;
+			margin-bottom: (@baseLineHeight / 2);
+		}
+		.location-inputs {
+			display: none;
+			
+			&:first-of-type {
+				display: block;
+			}
+		}
+		.sl-location {
+			width: 100%!important;
+			margin-bottom: @baseLineHeight;
+			max-width: 100%;
+			
+			.select2-choice {
+				background-position: 7px center;
+				padding: 2px 0 2px 30px;
+				background-size: 15px;
+				
+				.select2-default {
+					color: rgba(0,0,0,.3) !important;
+				}
+			}
+		}
+		
+		
+	// Taxonomy inputs
+	// -----------------------------------
+		input[type="checkbox"] {
+			& + label {
+				color: rgba(255,255,255,.5);
+				float: left;
+				display: inline-flex;
+				line-height: 1em;
+				
+				&:before {
+					background-color: rgba(255,255,255,.1);
+					.box-shadow(inset 0 0 0 1px rgba(255,255,255,.4));
+				}
+				
+				&:hover {
+					color: #FFF;
+					
+					&:before {
+						background-color: #FFF;
+					}
+				}
+			}
+		
+			&:checked + label {
+				color: #FFF;
+				text-shadow: 0 1px 2px rgba(0,0,0,.6);
+				
+				&:before {
+					background-color: @featuredSearchActionColor;
+					.box-shadow(0 0 0 2px #FFF);
+				}
+			}
+		}
+
+		
+		
+	// commented out till ratings become available
+	/*
+		.ratings-inputs {
+			.stars {
+				display: block;
+				font-size: 1.5em;
+				
+				&:before {
+					color: rgba(255,255,255,.4);
+				}
+				&.star-4:before { content: "@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}"; }
+				&.star-3:before { content: "@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}"; }
+				&.star-2:before { content: "@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}"; }
+				&.star-1:before { content: "@{reviewRatingBackgroundIcon}"; }
+				
+				&.active,
+				&:hover {
+					&:before {
+						color: rgba(255,255,255,.7);
+					}
+					&.star-5:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}"; }
+					&.star-4:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}"; }
+					&.star-3:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}"; }
+					&.star-2:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}"; }
+					&.star-1:before { content: "@{reviewRatingIcon}"; }
+				}
+				
+				&.active {
+					&:before {
+						color: #FFF;
+						text-shadow: 0 1px 2px rgba(0,0,0,.5);
+					}
+				}
+			}
+		}
+	*/
+
+		.button {
+			clear: both;
+			display: block;
+			
+			color: #fff;
+			text-shadow: 0 1px 1px rgba(0,0,0,.5);
+			background-color: @featuredSearchActionColor;
+		}
+		
+		
+	
+// -------------------------	
+// LAYOUT
+// -------------------------	
+		.main-inputs {
+			width: 100%;
+			min-width: 250px;
+			
+			@media (max-width: 768px) {
+				min-width: 0;
+				
+			}
+
+		}
+		.taxonomy-inputs {
+			width: 100%;
+			
+			.fade-in(1s);
+			
+			label {
+				width: 30%;
+				margin-right: 3%;
+				
+				&:nth-of-type(3n+1) {
+					clear: both;
+				}
+			}
+			&:first-of-type {
+				display: block;
+			}
+		}
+
+
+
+// WITH TAXONOMIES INPUTS
+// -------------------------	
+		&.has-taxonomies {
+			width: 75%;
+			
+			.main-inputs {
+				width: 30%;
+			}
+			.taxonomy-inputs {
+				width: 62.5%;
+				margin-left: 5%;
+				//display: block;
+				
+				@media (min-width: 981px) and (max-width: 1200px) {
+					width: 50%;
+				}
+				@media (min-width: 769px) and (max-width: 980px) {
+					width: 40%;
+					
+					label {
+						width: 45%;
+						margin-right: 5%;
+						font-size: .9em;
+						
+						&:before {
+							width: 14px;
+							height: 14px;
+							margin: -1px 5px -1px 0;
+						}
+						&:nth-of-type(3n+1) {
+							clear: none;
+						}
+						&:nth-of-type(2n+1) {
+							clear: both;
+						}
+					}
+				}
+			}
+			@media (min-width: 1400px) {
+				width: 65%;
+				
+				.taxonomy-inputs {
+					width: 57%;
+				}
+			}
+			@media (min-width: 1600px) {
+				width: 60%;
+				
+				.taxonomy-inputs {
+					width: 55%;
+				}
+			}
+			@media (max-width: 400px) {
+				.taxonomy-inputs label {
+					width: 45%;
+					margin-right: 5%;
+					
+					&:nth-of-type(3n+1) {
+						clear: none;
+					}
+					&:nth-of-type(2n+1) {
+						clear: both;
+					}
+				}
+			}
+		}
+	
+		
+// VERTICAL LAYOUT
+// -------------------------
+
+	// commented out till ratings become available
+	/*
+		&.vertical-layout {
+			width: 33%;
+			
+			&.has-taxonomies {
+				.main-inputs {
+					width: 100%;
+				}
+				.taxonomy-inputs {
+					width: 100%;
+					margin: 0 0 (@baseLineHeight / 2) 0;
+					
+					label {
+						width: 50%;
+					}
+				}
+			}
+		}
+	*/
+
+		&,
+		&.has-taxonomies,
+		&.vertical-layout {
+			@media (max-width: 768px) {
+				width: 50%;
+				min-width: 280px;
+				
+				.main-inputs {
+					width: 100%;
+					
+				}
+				.taxonomy-inputs {
+					width: 100%;
+					margin: 0;
+					
+					label {
+						font-size: .85em;
+						
+						&:before {
+							width: 12px;
+							height: 12px;
+							margin: -1px 5px -1px 0;
+						}
+					}
+				}
+			}
+		
+			@media (max-width: 480px) {
+				width: 100%;
+				min-width: 260px;
+				
+				.taxonomy-inputs {
+					margin: (@baseLineHeight / 2) 0;
+				}
+			}
+		}	
+	}
+}
+
+
+.home #select2-drop {
+	margin-top: -30px;
+	//border-radius: @baseBorderRadius;
+	
+	&.select2-drop-above {
+		margin-top: 2px;
+		//border-radius: @baseBorderRadius @baseBorderRadius 0 0;
+	}
+	
+	#s2id_autogen1_search {
+		padding-left: 32px;
+		background-position: 7px center;
+	}
+}
+
+
+
+// SEARCH SUGGEST PLUGIN
+// -------------------------
+@import "../../plugins/select2.less";
+

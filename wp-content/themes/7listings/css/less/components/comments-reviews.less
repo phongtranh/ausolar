@@ -1,0 +1,218 @@
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// COMMENTS - REVIEWS
+// last edit: 5.8.3
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+
+//	CONTENTS
+// -----------------------
+// - PAGE LAYOUT
+// - NESTED COMMENTS
+// -----------------------
+// - MODAL POPUP
+// -----------------------
+
+// PAGE LAYOUT
+// -------------------------------------------------------------
+#comments {
+	clear: both;
+	overflow: hidden;
+	zoom: 1;
+	background: none;
+
+	.comments-title {
+		h3 {
+			margin: 0 0 @baseLineHeight 0;
+			&:before {
+				content: "\f0e6";
+				font-family: "FontAwesome";
+				margin-right: .5em;
+				font-size: 1.2em;
+				position: relative;
+			}
+		}
+		.stars {
+			float: right;
+			font-size: 1.5em;
+		}
+	}
+
+	ol, 
+	ul {
+		list-style-type: none;
+	}
+
+	.comment {
+		margin: 0 0 @baseLineHeight 0;
+		padding: 0;
+
+		.thumbnail {
+			float: left;
+			width: 80px;
+			height: auto;
+			margin: 0 (@baseLineHeight / 2) 0 0;
+			
+			@media (max-width: 340px) {
+				width: 60px;
+			}
+		}
+		.details,
+		.description {
+			display: table;
+			width: inherit;
+
+			.entry-content {
+				margin: 0;
+			}
+		}
+		.author {
+			margin: 0;
+		}
+		.stars {
+			margin: 0 1em 0 0;
+			bottom: -.25em;
+		}
+		.date {
+			color: fade(@textColor, 75%);
+			font-size: .8em;
+		}
+		.pending {
+			color: fade(@textColor, 75%);
+			font-weight: bold;
+		}
+		.description {
+			margin: 0;
+		}
+		.comment-reply-link {
+			display: block;
+
+			&:before {
+				content: "\f086";
+				font-family: "FontAwesome";
+				margin-right: 6px;
+				font-size: 1.2em;
+				position: relative;
+			}
+		}
+	}
+	// NESTED COMMENTS
+	// -------------------
+	.commentlist {
+		margin: 0;
+
+		.children {
+			margin: 0 0 0 (80px + (@baseLineHeight / 2));
+
+			.comment {
+				margin: 0 0 (@baseLineHeight / 2) 0;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	#comments {
+		.commentlist .children {
+			margin: 0 0 0 (40px + (@baseLineHeight / 2));
+		}
+		.comment .description > p {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+}
+
+.comments-link > a:before,
+.add-review > a:before {
+	content: "\f075";
+	font-family: "FontAwesome";
+	margin-right: 6px;
+	font-size: 1.2em;
+	position: relative;
+	/*-webkit-transform: scale(-1, 1);
+	-moz-transform: scale(-1, 1);
+	-ms-transform: scale(-1, 1);
+	-o-transform: scale(-1, 1);
+	transform: scale(-1, 1);
+	.translate3d(-1, 1, 0);*/
+}
+
+.add-review {
+	margin: 20px 0;
+}
+
+// HiDPI Displays
+// --------------------------------------------------
+// --------------------------------------------------
+@media print,
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {
+	.avatar {
+		max-width: 80px !important;
+	}
+}
+
+
+// COMMENT FORM IN BODY
+// -------------------------------------------------------------
+
+#comment-form {
+	input[type="text"],
+	input[type="email"] {
+		width: 50%;
+		line-height: 2em;
+	}
+	.stars {
+		font-size: 2em;
+		margin-bottom: -10px;
+	}
+	#comment {
+		width: 75%;
+		min-height: 8em;
+	}
+	input[type="text"],
+	input[type="email"],
+	#comment {
+		@media (max-width: 400px) {
+			width: 100%;
+		}
+	}
+	
+// INLINE FORM
+// -------------------------------------------------------------	
+	&.comment-body {
+		margin: 2em 0;
+
+	}
+	
+	
+	
+// MODAL POPUP
+// -------------------------------------------------------------
+	&.modal {
+		label {
+			color: #666;
+			padding-left: 3px;
+		}
+		input[type="text"],
+		input[type="email"],
+		#comment {
+			.backgroundColorGuard(@white);
+			.border-radius(4px);
+		}
+		input[type="text"],
+		input[type="email"] {
+			width: 75%;
+		}
+		.stars {
+			margin-bottom: 0;
+		}
+	
+		#comment {
+			min-height: 75px;
+			width: 100%;
+		}
+	}
+}

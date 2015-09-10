@@ -1,0 +1,117 @@
+// --------------------------------------------
+// SLIDER
+// last edit: 5.8.3
+// --------------------------------------------
+
+.ui-slider {
+	position: relative;
+	text-align: left;
+	.border-radius(@baseBorderRadius);
+	
+	background: fade(@sidebarTextColor, 15%);
+	border: 1px solid fade(@sidebarTextColor, 20%);
+
+	.ui-slider-handle {
+		position: absolute;
+		z-index: 2;
+		width: 1.2em;
+		height: 1.2em;
+		cursor: default;
+		-ms-touch-action: none;
+		touch-action: none;
+		
+		padding: 0;
+		
+		background-color: @sidebarButtonPrimaryBackground;
+		cursor: ew-resize;
+
+		/*
+		&:hover,
+		&.ui-state-hover {
+			background-color: #56962b;
+		}
+		&:active,
+		&.ui-state-active {
+			background-color: #56962b;
+		}
+		*/
+	}
+	
+	.ui-slider-range {
+		position: absolute;
+		z-index: 1;
+		font-size: .7em;
+		display: block;
+		border: 0;
+		background-position: 0 0;
+		
+		border: 1px solid fade(@sidebarButtonPrimaryBackground, 20%);
+		background-color: fade(@sidebarButtonPrimaryBackground, 50%);
+	}
+	
+	&.ui-state-disabled {
+		.ui-slider-handle,
+		.ui-slider-range {
+			filter: inherit;
+		}
+	}
+}
+
+
+
+// HORIZONTAL SLIDER
+// --------------------------
+.ui-slider-horizontal {
+	height: .8em;
+	width: 100%;
+	
+	.ui-slider-handle {
+		top: -.25em;
+		margin-left: -.5em;
+	}
+	.ui-slider-range {
+		top: -1px;
+		//height: 100%;
+		bottom: -1px;
+	}
+	.ui-slider-range-min {
+		left: 0;
+	}
+	.ui-slider-range-max {
+		right: 0;
+	}
+}
+
+
+
+// VERTICAL SLIDER
+// --------------------------
+/*
+.ui-slider-vertical {
+	width: .8em;
+	height: 100px;
+
+	.ui-slider-handle {
+		left: -.3em;
+		margin-left: 0;
+		margin-bottom: -.6em;
+	}
+	.ui-slider-range {
+		left: 0;
+		width: 100%;
+	}
+	.ui-slider-range-min {
+		bottom: 0;
+	}
+	.ui-slider-range-max {
+		top: 0;
+	}
+}
+*/
+
+
+
+.ui-sortable-handle {
+	-ms-touch-action: none;
+	touch-action: none;
+}

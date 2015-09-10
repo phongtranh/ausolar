@@ -1,0 +1,178 @@
+// --------------------------------------------------
+// PANEL 2 - CONTACT DETAILS
+// last edit: 5.8.3
+// --------------------------------------------------
+
+.contact {
+
+	.name,
+	.phone {
+		width: 50%;
+	}
+	.name.first {
+		border-right: none;
+		.border-bottom-right-radius(0);
+		.border-top-right-radius(0);
+		padding-left: @inputIconWidth;
+	}
+	.name.last {
+		.border-bottom-left-radius(0);
+		.border-top-left-radius(0);
+		border-left-color: rgba(0, 0, 0, .1);
+		background-image: none;
+	}
+	@media (max-width: 400px) {
+		.sl-label {
+			margin: 0;
+		}
+
+		.phone {
+			width: 75%;
+		}
+	}
+
+	.email,
+	.message {
+		width: 100%;
+	}
+	//.phone { }
+	.more-guests {
+		margin: 0 0 20px 20%;
+
+		@media (max-width: 400px) {
+			margin: 0 0 20px;
+		}
+	}
+
+	.message {
+		padding: 6px 10px;
+		min-height: 90px;
+		margin-bottom: 30px;
+	}
+
+	.booking-policies {
+		margin: 10px 0 10px 20%;
+		padding: 0;
+
+		.terms-link {
+			display: inline-block;
+		}
+	}
+	input[type="checkbox"]#agree {
+
+		& + .sl-label-inline {
+			line-height: 1em;
+			padding-right: 1.5em;
+			
+			&:after {
+				display: inline-block;
+				float: right;
+				margin: -.25em;
+				right: -1em;
+				position: relative;
+				color: @requiredColor;
+				content: "\f0a8";
+				font-family: 'FontAwesome';
+				line-height: 1em;
+				font-size: 1.75em;
+
+				.pulsing (@duration: 1.6s);
+			}
+		}
+
+		&:checked + .sl-label-inline {
+			&:after {
+				content: none;
+			}
+		}
+	}
+	
+	
+	
+			
+			
+			
+	.newsletter {
+		margin: 10px 0 20px 20%;
+	}
+
+	.name.first,
+	input[type="email"].email,
+	input[type="text"].phone,
+	textarea.message {
+		padding-left: @inputIconWidth;
+		background-size: 16px;
+	}
+	.name.last {
+		padding-left: 10px;
+	}
+	.other-passengers {
+		margin: 0 0 40px 0;
+
+		.passenger {
+			margin: 0 0 20px 0;
+
+			.guest-title {
+				margin-left: 20%;
+				color: #C6C070;
+			}
+			@media (max-width: 400px) {
+				.sl-field {
+					padding: 0 0 7px 0;
+				}
+
+				.sl-label {
+					margin: 0;
+				}
+
+				.guest-title {
+					margin-left: 0;
+				}
+			}
+		}
+		.sl-input-warning {
+			display: none;
+		}
+	}
+	.hint {
+		color: rgba(0, 0, 0, .4);
+	}
+	
+	// TOUR BUNDLES PLUGIN
+	.tour-bundle-policies .modal-body h3 {
+		margin-top: (@baseLineHeight * 2);
+		
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	@media (max-width: 400px) {
+
+		.booking-policies,
+		.newsletter {
+			margin: 10px 0 20px;
+
+			label {
+				width: 80%;
+				line-height: 1.2em;
+				top: .5em;
+				position: relative;
+				margin-left: 2.5%;
+			}
+		}
+	}
+	@media (min-width: 401px) {
+		.booking-policies,
+		.newsletter {
+			.sl-input {
+				width: 90%;
+				display: flex;
+			}
+			.sl-label-inline {
+				display: inline-block;
+			}
+		}
+	}
+}
+

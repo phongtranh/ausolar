@@ -1,0 +1,168 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// ADMIN MIXINS
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+.admin-buttons (@x: 0, @y: 0) {
+	background: url("@{admin-sprite}") no-repeat @x @y;
+}
+
+.share-buttons (@x: 0, @y: 0) {
+	background-position: @x @y;
+}
+
+//	.simple-sprite (@s-image: 0) {background: url("@{image-path}"/"@{s-image}") no-repeat center center;}
+
+
+// ICONS
+// --------------------------------------------------
+.tiny-icon 		{width: @tiny-size; height: @tiny-size;}
+.small-icon 	{width: @small-size; height: @small-size;}
+.medium-icon 	{width: @medium-size; height: @medium-size;}
+.large-icon 	{width: @large-size; height: @large-size;}
+	
+//	.huge-icon 	{width: @huge-size; height: @huge-size;}
+
+
+
+// ICONS
+// --------------------------------------------------
+.thumb (@twidth: @large-size, @theight: @large-size, @tborder: 5px) {
+	width: @twidth;
+	height: @theight;
+	background: #DDD;
+	// border: @tborder solid #FFF;
+	// .border-radius (3px);
+	box-shadow: inset 0 0 0 1px @wp-grey-light;
+}
+
+
+// BORDERS
+// --------------------------------------------------
+
+.border-radius(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+  -moz-background-clip: padding; 
+  -webkit-background-clip: padding-box; 
+  background-clip: padding-box; 
+}
+
+.border ( @bsize: @border-size, @bstyle: @border-style, @bcolor: @border-color) {
+	border: @bsize @bstyle @bcolor;
+	box-shadow: 0 @bsize 0 @emboss;}
+	
+.top-border {
+	.border;
+	border-width: @border-size 0 0 0;
+	box-shadow: inset 0 @border-size 0 @emboss;}
+.bottom-border {
+	.border;
+	border-width: 0 0 @border-size 0;}
+
+
+
+// TABLE HIGHLIGHTING
+// --------------------------------------------------
+.row-highlight (@row-color: @wp-blue-slight) {
+	background: @row-color;
+	border-bottom: 1px solid rgba(0,0,0,.025);
+}
+
+
+
+// EMBOSSING & HIGHLIGHTING
+// --------------------------------------------------
+.text-shadow-emboss ( @tse-color: @emboss) {
+	text-shadow: 0 @border-size 0 @tse-color;
+}
+.text-shadow-high ( @tsh-color: @shadow) {
+	text-shadow: 0 @border-size 0 @tsh-color;
+}
+
+.box-embossed ( @be-color: @emboss) {
+	box-shadow: 0 @border-size 0 @be-color, inset 0 @border-size @border-size*2 rgba(0,0,0,.2);
+}
+.box-shadowed ( @strength: 5px, @bs-color: @shadow) {
+	box-shadow: 0 @strength*1.3 @strength -@strength @bs-color;
+}
+.box-shadow () {
+	box-shadow: 0 1px 0 2px #000;
+}
+
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+
+
+// INPUTS
+// --------------------------------------------------
+.input-tiny 				{width: @input-tiny;}
+.input-small 				{width: @input-small;}
+.input-medium 				{width: @input-medium;}
+.input-large 				{width: @input-large;}
+.input-huge 				{width: @input-huge;}
+
+
+
+// ANIMATION
+// --------------------------------------------------
+.super-animation {
+	-webkit-transition-property:color, background, border, text-shadow;
+	-webkit-transition-duration: 0.3s, 0.6s, 1.0s, 0.3s;
+	-webkit-transition-timing-function: linear, ease-in;
+
+	-o-transition-property:color, background, border, text-shadow;
+	-o-transition-duration: 0.3s, 0.6s, 1.0s, 0.3s;
+	-o-transition-timing-function: linear, ease-in;
+
+	-moz-transition-property:color, background, border, text-shadow;
+	-moz-transition-duration: 0.3s, 0.6s, 1.0s, 0.3s;
+	-moz-transition-timing-function: linear, ease-in;
+
+	transition-property:color, background, border, text-shadow;
+	transition-duration: 0.3s, 0.6s, 1.0s, 0.3s;
+	transition-timing-function: linear, ease-in;
+	}
+
+// PULSING
+// .pulsing (@duration: 1.6s);
+// -----------------------------
+@-webkit-keyframes pulsing {
+  from 	{ .scale(1);}
+  30% 	{ .scale(1);}
+  70% 	{ .scale(1.5);}
+  to 	{ .scale(1);}
+}
+
+@-moz-keyframes pulsing {
+  from 	{ .scale(1);}
+  30% 	{ .scale(1);}
+  70% 	{ .scale(1.5);}
+  to 	{ .scale(1);}
+}
+@keyframes pulsing {
+  from 	{ .scale(1);}
+  30% 	{ .scale(1);}
+  70% 	{ .scale(1.5);}
+  to 	{ .scale(1);}
+}

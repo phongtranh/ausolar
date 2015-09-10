@@ -1,0 +1,100 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// HEADER DESIGN
+// last edit: 5.0
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+// CONTENTS
+// --------------------------
+// - BRANDING
+// - NAV BAR
+// --------------------------
+// - RESPONSIVE SIZES
+// - HEADER POSITION WHEN USER IS LOGGED IN
+// --------------------------
+// - HiDPI Displays
+
+
+
+#branding {
+
+	> .container {
+		padding: 0;
+		position: relative;
+	}
+}
+
+
+
+// --------------------------------------------------
+// SITE TITLE & DESCRIPTION
+// --------------------------------------------------
+#site-title 		{ font-family: @siteTitleFont; }
+#site-description 	{ font-family: @siteDescriptionFont; }
+
+#site-title,
+#site-description {
+	white-space: nowrap;
+}
+
+
+
+// --------------------------------------------------
+// HEADER DESIGNS
+// --------------------------------------------------
+@media (max-width: @mobileNavBreakPointBottom) 	{ @import "header/mobile.less"; }
+@media (min-width: @mobileNavBreakPoint) 		{ @import "header/desktop.less"; }
+
+
+
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// RESPONSIVE SIZES
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+@media (min-width: 768px) and (max-width: 979px) {
+	#weather 				{ zoom: .7;}
+}
+@media (max-width: 480px) 	{
+	.navbar.affix 			{ position:static;} // MAKE MENU STAY FIXED ON SMALL DEVICES SO IT DOESNT TAKE UP REAL ESTATE
+}
+
+@media (max-width: 320px) 	{
+	#site-description,
+	#social-follow-buttons 	{ display: none;}
+}
+
+
+
+// --------------------------------------------------
+// HEADER POSITION WHEN USER IS LOGGED IN
+// --------------------------------------------------
+.customize-support {
+	.navbar.affix {
+		position: fixed;
+		top: @WPadminMenuHeight;
+
+		@media (max-width: @mobileNavBreakPointBottom){ position: static; }
+	}
+	.container-fluid {
+		position: relative;
+	}
+}
+
+
+
+
+/*// --------------------------------------------------
+// HiDPI Displays
+// --------------------------------------------------
+@media print,
+	(-o-min-device-pixel-ratio: 5/4),
+	(-webkit-min-device-pixel-ratio: 1.25),
+	(min-resolution: 120dpi) {
+
+
+	}
+}
+*/

@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/* CSS 7Listings Admin Design -------------------- */
+
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+// Description: WP-Admin Design.
+
+// Author: 7 Listings
+// Author URI: http://www.7listings.net
+
+// Version: 5.8.2
+// --------------------------------------------------
+// --------------------------------------------------
+// --------------------------------------------------
+
+a {
+	&:active,
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+}
+// --------------------------------------------------
+// CORE VARIABLES AND MIXINS
+// --------------------------------------------------
+
+// VARIABLES
+@import "components/7admin-variables.less";
+// MIXINS
+@import "components/7admin-mixins.less";
+
+
+
+// --------------------------------------------------
+// Bootstrap CUSTOMIZED
+@import "../components/bootstrap-2.3.1/variables.less";	// Used & customized variables are put into 7variables.less
+@import "../components/bootstrap-2.3.1/mixins.less";				// BS: and used in non BS styles
+
+
+
+@import "../components/7mixins.less";
+
+
+
+// 3.8 COLOUR THEMES
+@import "new/3.8-theme-colours.less"; //50kb
+
+
+
+//@import "../components/bootstrap-2.3.1/forms.less";
+@import "../components/bootstrap-2.3.1/alerts.less";
+//@import "../components/bootstrap-2.3.1/modals.less";
+@import "../components/bootstrap-2.3.1/close.less";
+//@import "../components/bootstrap-2.3.1/buttons.less";
+@import "../components/bootstrap-2.3.1/code.less";
+@import "../components/bootstrap-2.3.1/component-animations";
+
+@import "../components/plugins/font-awesome/style.less";
+
+
+
+// COMMON
+// --------------------------------------------------
+//@import "components/common.less";
+@import "tooltip.less"; 
+
+@import "../components/common/ratings.less";
+@import "../components/common/icons.less"; // 14kb
+//@import "../components/common/social-media.less";
+
+// INPUTS
+// --------------------------------------------------
+//@import "components/forms.less"; //- same as BS?
+
+@import "new/input-prepend-append.less";
+
+//@import "components/inputs.less";
+
+@import "new/admin-settings.less";
+
+
+// --------------------------------------------------
+// META BOXES AND TABS
+// --------------------------------------------------
+// TABS
+@import "new/tabs.less";
+// META BOXES
+@import "components/meta-box.less";
+// LAYOUT
+@import "components/layout.less";
+// SIDEBARS
+@import "settings/sidebar.less";
+
+@import "new/widgets.less";
+
+// CPT ARCHIVES
+// --------------------------------------------------
+@import "components/archives.less";
+
+
+// SINGLE LISTING TABS
+// --------------------------------------------------
+// PHOTOS TAB
+@import "new/single/photos.less";
+// BOOKING RESOURCES TAB
+@import "new/single/booking-resources.less";
+// SCHEDULES TAB
+@import "new/single/schedules.less";
+// INFO TAB
+@import "new/single/info.less";
+
+
+// INFO TAB
+@import "new/single/edit-post.less";
+
+
+
+// WP PAGE SETTINGS
+// --------------------------------------------------
+@import "shortcodes/shortcodes.less";
+
+@import "new/single/featured-header.less";
+
+
+// WIDGETS
+// --------------------------------------------------
+@import "settings/widgets.less";
+
+
+// SETTINGS
+// --------------------------------------------------
+@import "settings.less";
+@import "settings/listings.less";
+@import "settings/background.less";
+@import "settings/payment.less";
+@import "settings/homepage.less";
+@import "settings/emails.less";
+@import "settings/design.less";
+@import "settings/social-media.less";
+@import "settings/company.less";
+@import "settings/knowledge-graph.less";
+
+
+@import "settings/custom-menu.less";
+
+
+
+@import "settings/single.less";		// Pages > CPT > Single settings
+
+
+@import "settings/contact-us.less";
+
+@import "settings/slideshow.less";
+// - sidebars page has css with meta boxes
+
+
+// SHORTCODES
+// --------------------------------------------------
+@import "shortcodes/modal.less";
+
+// --------------------------------------------------
+// COMPONENTS
+// --------------------------------------------------
+// SPRITES
+@import "new/embedded-images.less";
+
+// CALENDAR & TIME POPUPS
+@import "plugins/datepicker.less";
+
+
+// ON/OFF CHECKBOX (Fancy Checkbox)
+@import "new/io-checkbox.less";
+
+@import "new/icon-buttons.less";
+
+// BOOKINGS
+@import "bookings/booking-archive.less";
+@import "bookings/edit-booking.less";
+
+
+
+
+@import "plugins/select2.less";
+
+
+#woocommerce-product-data > h3 > span > span > label {
+	display: inline-block!important;
+}
+
+select {
+	background-image: none;
+}
+
+input.name,
+input#username,
+input#user_login,
+
+input[type="email"],
+input.email,
+input[type="tel"],
+input.phone,
+input[type="url"],
+input.website,
+input[type="date"],
+//input.datepicker,
+textarea.message,
+input[type="password"],
+
+input.timepicker, 
+#hour-input, 
+#content .time-select {
+  background-image: none;
+}
+
+input[type="number"] {
+  text-align: right;
+}
+
+.timepicker.hasDatepicker {
+	width: 60px;
+	text-align: center;
+}
+
+hr.light {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}

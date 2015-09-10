@@ -1,0 +1,39 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// BREADCRUMBS
+// last edit: 5.8.3
+// --------------------------------------------------
+// --------------------------------------------------
+
+#breadcrumbs {
+	padding: (@baseLineHeight / 2) 0;
+	background-color: @breadcrumbsBackground;
+
+	.breadcrumb {
+		margin: 0;
+		list-style: none;
+		
+		> li {
+			display: inline-block;
+			
+			&+li:before {
+				content: "/\00a0"; // Unicode space added since inline-block means non-collapsing white-space
+				padding: 0 5px 0 12px;
+				color: @breadcrumbsSeparator;
+			}
+		}
+		a,
+		a:link,
+		a:visited {
+			color: @breadcrumbsSeparator;
+			//.textguard(@breadcrumbsSeparator,@breadcrumbsBackground);
+		}
+		.active a,
+		.active a:link,
+		a:hover {
+			color: @breadcrumbsCurrent;
+			.textguard(@breadcrumbsCurrent,@breadcrumbsBackground);
+		}
+		//.active span { font-weight: bold; }
+	}
+}

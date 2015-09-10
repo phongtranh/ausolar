@@ -1,0 +1,141 @@
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// CONTENT LAYOUT
+// last edit: 5.8.3
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+
+
+#content,
+#sidebar {
+	padding-top: @baseLineHeight;
+	padding-bottom: @baseLineHeight;
+}
+
+#content {
+	min-height: 600px;
+	
+	*,
+	iframe {
+	  max-width: 100%;
+	}
+	@media (min-width: 768px) {  
+		> article[class*="post"] .span6:first-of-type { 
+			margin-left: 0; 
+		}  
+	}
+
+	.row-fluid {
+		@media (min-width: 1200px) 							{ .span4 { width: 31.625%; } 	.span6 { width: 48.7%; } }
+		@media (max-width: 979px) and (min-width: 768px) 	{ .span4 { width: 31.43%; } 	.span6 { width: 48.62%; } }
+	}
+	> article { .clearfix(); }
+}
+
+// SIDEBAR LAYOUT
+// -------------------
+@media (min-width: 768px) {
+	#main-wrapper {
+		position: relative;
+	}
+	#content {
+		width: 100%;
+		margin: 0;
+		.box-sizing(border-box);
+
+		&.right {
+			float: right;
+			width: (97.5% - @sidebarWidth);
+		}
+		&.left 	{
+			float: left;
+			width: (97.5% - @sidebarWidth);
+		}
+	}
+	#sidebar {
+		width: (@sidebarWidth - 1.5%);
+		margin: 0;
+		//.box-sizing(border-box);
+		
+		padding-right: @baseLineHeight;
+		padding-left: @baseLineHeight;
+		.sidebarColorGuard(@mainBackground,@sidebarBackground);
+
+		&.right { float: right; }
+		&.left  { float: left; }
+	}
+}
+
+@import "sidebar.less";
+
+
+// ------------------------------------------------
+// SMALL SIZES
+// ------------------------------------------------
+@media (max-width: 767px) {
+	body { padding: 0;}
+	
+	body,
+	#main,
+	#colophon {
+		padding-left: 0;
+		padding-right: 0;
+		margin: 0;
+
+		.box-sizing(border-box);
+	}
+	#sidebar {
+		width: 100%;
+		//.box-sizing(border-box);
+	}
+}
+@media (min-width: 341px) and (max-width: 767px) {
+	#breadcrumbs,
+	#featured > .container,
+	#content,
+
+	#main-wrapper.home-sections > section,
+
+	#sidebar,
+	
+	#top,
+	#middle,
+	#bottom,
+	.footer-section {
+		padding-left: (@baseLineHeight * 1.5);
+		padding-right: (@baseLineHeight * 1.5);
+	}
+	
+	#main-wrapper.home-sections > section {
+		#content, 
+		#sidebar {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+@media (max-width: 340px) {
+	#breadcrumbs,
+	#featured > .container,
+	#content,
+
+	#main-wrapper.home-sections > section,
+
+	#sidebar,
+	
+	#top,
+	#middle,
+	#bottom,
+	.footer-section {
+		padding-left: (@baseLineHeight * .75);
+		padding-right: (@baseLineHeight * .75);
+	}
+	
+	#main-wrapper.home-sections > section {
+		#content, 
+		#sidebar {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}

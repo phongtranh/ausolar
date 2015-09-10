@@ -1,0 +1,124 @@
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// WP MENUS
+// last edit: 5.5.1
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+
+
+.accordion-container {
+	
+	.accordion-section {
+		
+		/*
+		.tabs {	
+			margin: 0; // correct 7 TABS CSS
+		}
+		*/
+		.accordion-section-title:before {
+			font-family: '7listings-icons';
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			margin: 0 .2em 0 -.4em;
+			color: rgba(0,0,0,.4);
+		}
+		&.open .accordion-section-title:before {
+			color: rgba(0,0,0,.6);
+		}
+		
+		
+		&.add-accommodation,
+		&.add-stars,
+		&.add-type,
+		&.add-amenity	{
+			.accordion-section-title:before {
+				content: "\e604"; 
+			}
+		}
+		&.add-tour,
+		&.add-tour_type,
+		&.add-features	{
+			.accordion-section-title:before {
+				content: "\e601";
+			}
+		}
+		&.add-rental,
+		&.add-rental_type,
+		&.add-feature	{
+			.accordion-section-title:before {
+				content: "\e607";  
+			}
+		}
+		&.add-company,
+		&.add-company_product,
+		&.add-company_service {
+			.accordion-section-title:before {
+				content: "\e609"; 
+			}
+		}
+		&.add-attraction,
+		&.add-attraction_type,
+		&.add-attraction_feature {
+			.accordion-section-title:before {
+				content: "\e606"; 
+			}
+		}
+		
+		
+		
+			
+		&.add-page,
+		&.add-post,
+		&.add-category,
+		&.add-post_tag,
+		&.add-post_format,
+		&.add-custom-links,
+		
+		&.add-location,
+		&.add-booking {
+			.accordion-section-title:before {
+				font-family: 'dashicons';
+			}
+		}
+		
+		&.add-page .accordion-section-title:before {
+			content: "\f105";
+		}
+		&.add-post,
+		&.add-category,
+		&.add-post_tag,
+		&.add-post_format {
+			.accordion-section-title:before {
+				content: "\f109";
+			}
+		}
+		&.add-custom-links .accordion-section-title:before {
+			content: "\f103";
+		}
+		
+		&.add-location .accordion-section-title:before {
+			content: "\f231";
+		}
+		&.add-booking .accordion-section-title:before {
+			content: "\f239";
+		}
+
+		
+		&.add-product,
+		&.add-product_tag,
+		&.add-product_cat,
+		&.woocommerce_endpoints_nav_link,
+		
+		&.add-brand { 
+			.accordion-section-title:before {
+				font-family: 'WooCommerce';
+				content: "\e01d";
+			}
+		}
+	}
+}
+
+

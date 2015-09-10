@@ -1,0 +1,70 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// WP KITCHENSINK CUTOMIZATION
+// Last Edit: 4.16
+// --------------------------------------------------
+// --------------------------------------------------
+
+@sinkHoverColor: #D51313; // #333;
+
+#wp-content-editor-container .wp_themeSkin .mceSeparator {
+	display: inline-block;
+	width:  2px;
+	height: 20px;
+
+	border-left: 1px solid rgba(0, 0, 0, .1);
+	margin: .4em 0 0 .5em;
+	padding: 0 0 0 .5em;
+	box-shadow: inset 2px 0 0 -1px rgba(255, 255, 255, .6);
+}
+
+
+
+.mce-toolbar i.mce-ico {
+	font: normal 20px/1 'dashicons';
+	padding: 0;
+	vertical-align: top;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	&.mce-i-sls_text:before {
+		content: "\f213";
+	}
+	&.mce-i-sls_custom_list:before {
+		content: "\f163";
+	}
+	&.mce-i-sls_button:before {
+		content: "\f103";
+		background: rgb(119, 119, 119);
+		padding: 2px;
+		color: #f7f7f7;
+		font-size: 18px;
+		text-align: center;
+		box-sizing: border-box;
+		border-radius: 3px;
+		overflow: visible;
+		display: inline-block;
+		top: -1px;
+		position: relative;
+	}
+	&.mce-i-sls_icon:before {
+		content: "\f176";
+	}
+	&.mce-i-sls_map:before {
+		content: "\f231";
+	}
+	&.mce-i-sls_slider:before {
+		content: "\f233";
+	}
+	&.mce-i-sls_list:before {
+		content: "\f175";
+	}
+	&.mce-i-sls_normal:before {
+		content: "\f116";
+	}
+}
+
+// --------------------------------------------------
+// SHORTCODE BUTTONS
+// --------------------------------------------------

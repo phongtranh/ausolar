@@ -1,0 +1,43 @@
+/*
+	stylesheet for ie8 and below
+*/
+
+#site-title a {
+	color: #000;
+}
+#title {
+	color: #fff;
+	background: #222;
+}
+
+#nav-open-btn {
+	color: #eee;
+}
+
+#nav-slide,
+#nav-slide a:hover,
+#nav-slide .dropdown-menu li a:hover,
+#nav-slide .dropdown-menu li a:focus,
+#nav-slide .dropdown-submenu:hover > a {
+	background: #333 !important;
+}
+#nav-slide a {
+	border-top: 1px solid #555;
+}
+#nav-slide .active a {
+	color: #fff !important;
+	background-image: none !important;
+}
+
+/*
+	BOOKING PAGE
+*/
+.payment-gateway .eway,
+.payment-gateway .paypal,
+#checkout_form .paypal.logo,
+#checkout_form .eway.logo  {
+	text-indent: 0;
+	background: none;
+	background-image: none!important;
+	border: none;
+}

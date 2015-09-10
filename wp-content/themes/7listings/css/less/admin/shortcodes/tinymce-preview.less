@@ -1,0 +1,342 @@
+// --------------------------------------------------
+// CORE VARIABLES AND MIXINS
+// --------------------------------------------------
+
+
+// VARIABLES
+@import "../components/7admin-variables.less";
+// MIXINS
+@import "../components/7admin-mixins.less";
+
+// --------------------------------------------------
+// Bootstrap CUSTOMIZED
+
+@import "../../components/bootstrap-2.3.1/variables.less";		// Used & customized variables are put into 7variables.less
+@import "../../components/bootstrap-2.3.1/mixins.less";			// BS: and used in non BS styles
+
+
+@import "../../components/7variables.less";
+@import "../../components/7mixins.less";
+
+@import "../../components/plugins/font-awesome/font-awesome.less";
+
+
+body#tinymce.wp-editor {
+    /*font-family: Arial, Helvetica, sans-serif;
+    margin: 10px; */
+// BOOTSTRAP COMPONENTS
+
+	@import "../../components/bootstrap-2.3.1/scaffolding.less";
+	@import "../../components/bootstrap-2.3.1/grid.less";
+	@import "../../components/bootstrap-2.3.1/layouts.less";
+	@import "../../components/bootstrap-2.3.1/responsive.less";
+	
+	@import "../../components/bootstrap-2.3.1/alerts.less";
+	@import "../../components/common/buttons.less";
+	
+	
+
+	.dropcap {
+		float: left;
+		font-size: 5em;
+		line-height: .8em;
+		padding-top: 4px;
+		padding-right: 8px;
+		padding-left: 3px;
+	}
+	blockquote {
+		background: rgba(0,0,0,.07);
+		padding: 10px 20px;
+		border-radius: 3px;
+
+		&:before {
+			font-family: FontAwesome;
+			content: "\f10d";
+			color: rgba(0, 0, 0, .2);
+			text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+			margin: 0;
+		}
+		&:after {
+			font-family: FontAwesome;
+			content: "\f10e";
+			float: right;
+			margin: -1em 0 0 0;
+			color: rgba(0, 0, 0, .2);
+			text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+		}
+	}
+	.hightlight,
+	li .hightlight {
+		background: rgba(243,243,21,1);
+		margin: -2px;
+		padding: 2px;
+		border-radius: 2px;
+	}
+	sup {
+		margin: -2em 0 0 0;
+		line-height: .2em;
+	}
+	sub {
+		margin: 0 0 -2em 0;
+		line-height: .2em;
+	}
+	
+	
+	.sl-list.custom {
+		li {
+			list-style-type: none;
+			margin: 0 0 .5em 0;
+
+			&:before {
+				font-family: FontAwesome;
+				margin: 0 .5em 0 -1.5em;
+				display: inline-block;
+				position: relative;
+				width: 1em;
+				color: @listIconColor;
+			}
+		}
+// CUSTOM ICONS		
+		&.arrow-right li:before 		{ content: "\f061"; }
+		&.asterisk li:before 			{ content: "\f069"; }
+		&.caret li:before 				{ content: "\f0da"; }
+		&.circle-play li:before 		{ content: "\f01d"; }
+		&.circle li:before 				{ content: "\f111"; }
+		&.circle-blank li:before 		{ content: "\f10c"; }
+		&.circle-arrow-right li:before 	{ content: "\f0a9"; }
+		&.chevron li:before 			{ content: "\f054"; }
+		&.check li:before 				{ content: "\f046"; }
+		&.check-sign li:before 			{ content: "\f14a"; }
+		&.hand-right li:before 			{ content: "\f0a4"; }
+		&.plus li:before 				{ content: "\f067"; }
+		&.plus-sign li:before 			{ content: "\f055"; }
+		&.ok li:before 					{ content: "\f00c"; }
+		&.ok-circle li:before 			{ content: "\f05d"; }
+		&.ok-sign li:before 			{ content: "\f058"; }
+		&.angle li:before 				{ content: "\f105"; }
+		&.double-angle li:before 		{ content: "\f101"; }
+		
+// CUSTOM COLOURS
+		&.rosy li:before				{ color: @rosy; }
+		&.pink li:before				{ color: @pink; }
+		&.pink-dark li:before			{ color: @pink-dark; }
+		&.red li:before					{ color: @red; }
+		&.magenta li:before				{ color: @magenta; }
+		&.orange li:before				{ color: @orange; }
+		&.orange-dark li:before			{ color: @orange-dark; }
+		&.yellow li:before				{ color: @yellow; }
+		&.green-light li:before			{ color: @green-light; }
+		&.green-lime li:before			{ color: @green-lime; }
+		&.green li:before				{ color: @green; }
+		&.blue li:before				{ color: @blue; }
+		&.blue-dark li:before			{ color: @blue-dark; }
+		&.indigo li:before				{ color: @indigo; }
+		&.violet li:before				{ color: @violet; }
+		&.cappuccino li:before			{ color: @cappuccino; }
+		&.brown li:before				{ color: @brown; }
+		&.brown-dark li:before			{ color: @brown-dark; }
+		&.gray li:before				{ color: @gray; }
+		&.gray-dark li:before			{ color: @gray-dark; }
+		&.black li:before				{ color: @black; }
+		&.white li:before				{ color: @white; }
+		
+	}
+	
+	
+// ICONS
+// --------------------------------
+	i {
+		&.rosy				{ color: @rosy; }
+		&.pink				{ color: @pink; }
+		&.pink-dark			{ color: @pink-dark; }
+		&.red				{ color: @red; }
+		&.magenta			{ color: @magenta; }
+		&.orange			{ color: @orange; }
+		&.orange-dark		{ color: @orange-dark; }
+		&.yellow			{ color: @yellow; }
+		&.green-light		{ color: @green-light; }
+		&.green-lime		{ color: @green-lime; }
+		&.green				{ color: @green; }
+		&.blue				{ color: @blue; }
+		&.blue-dark			{ color: @blue-dark; }
+		&.indigo			{ color: @indigo; }
+		&.violet			{ color: @violet; }
+		&.cappuccino		{ color: @cappuccino; }
+		&.brown				{ color: @brown; }
+		&.brown-dark		{ color: @brown-dark; }
+		&.gray				{ color: @gray; }
+		&.gray-dark			{ color: @gray-dark; }
+		&.black				{ color: @black; }
+		&.white				{ color: @white; }
+	}
+	// Icon Sizes
+	// -------------------------
+	
+	.icon-2x,
+	#wrapper .icon-stack > .icon-2x {
+	  font-size: 2em;
+	  &.icon-border {
+		border-width: 2px;
+		.border-radius(4px);
+	  }
+	}
+	.icon-3x,
+	#wrapper .icon-stack > .icon-3x {
+	  font-size: 3em;
+	  &.icon-border {
+		border-width: 3px;
+		.border-radius(5px);
+	  }
+	}
+	.icon-4x,
+	#wrapper .icon-stack > .icon-4x {
+	  font-size: 4em;
+	  &.icon-border {
+		border-width: 4px;
+		.border-radius(6px);
+	  }
+	}
+	
+	.icon-5x,
+	#wrapper .icon-stack > .icon-5x {
+	  font-size: 5em;
+	  &.icon-border {
+		border-width: 5px;
+		.border-radius(7px);
+	  }
+	}
+	.icon-stack {
+		&.is-1-2 		{ width: .5em; height: .5em; line-height: .5em; }
+		&.is-large 		{ width: 1.25em; height: 1.25em; line-height: 1.25em; }
+		&.is-2x 		{ width: 2em; height: 2em; line-height: 2em; }
+		&.is-3x 		{ width: 3em; height: 3em; line-height: 3em; }
+		&.is-4x 		{ width: 4em; height: 4em; line-height: 4em; }
+		&.is-5x 		{ width: 5em; height: 5em; line-height: 5em; }
+	}
+	
+	
+
+	.row,
+	.row-fluid {
+		background-color: @wp-blue-slight;
+		/*width: 100%;*/
+		padding: 4px 0 1em 8px;
+		display: block;
+		margin: 0 -4px 1em -4px;
+		.border-radius(3px);
+		.box-shadow(0 0 0 1px @wp-blue-light);
+		display: inline-block;
+
+		.clearfix();
+
+		&:before {
+			font-family: FontAwesome;
+			content: "\f108";
+			color: @wp-blue-dark;
+			text-shadow: 0 1px 0 rgba(255,255,255,.6);
+			margin: 6px 4px -2em 0;
+			float: right;
+		}
+
+		[class*="span"] {		//.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9,	.span10, .span11, .span12
+			display: block;
+			float: left;
+			background-color: #FFF;
+			.border-radius(1px);
+			.box-shadow(0 0 0 1px @wp-blue-slight);
+			padding-left: 6px;
+			margin-top: 1.4em;
+			margin-right: -6px;
+
+			&:before {
+				color: 	@wp-blue-dark;
+				text-shadow: 0 1px 0 rgba(255,255,255,.6);
+				display: block;
+				margin: -1.5em 0 0 -6px;
+				font-family: sans-serif;
+				font-size: 11px;
+			}
+			&:first-child { margin-left: 0; }
+		}
+		.span1:before  { content: "1/12"; }
+		.span2:before  { content: "1/6"; }
+		.span3:before  { content: "1/4"; }
+		.span4:before  { content: "1/3"; }
+		.span5:before  { content: "5/12"; }
+		.span6:before  { content: "1/2"; }
+		.span7:before  { content: "7/12"; }
+		.span8:before  { content: "2/3"; }
+		.span9:before  { content: "3/4"; }
+		.span10:before { content: "5/6"; }
+		.span11:before { content: "11/12"; }
+		.span12:before { content: "1/1"; }
+	}
+	
+	// - STYLED BOXES
+	// --------------------------------
+	.color-box {
+		padding: 5px 10px;
+		background-color: darken(@bodyBackground, 25%);
+		margin-bottom: 1em;
+		
+		&.rosy				{ background-color: @rosy; }
+		&.pink				{ background-color: @pink; }
+		&.pink-dark			{ background-color: @pink-dark; }
+		&.red				{ background-color: @red; }
+		&.magenta			{ background-color: @magenta; }
+		&.orange			{ background-color: @orange; }
+		&.orange-dark		{ background-color: @orange-dark; }
+		&.yellow			{ background-color: @yellow; }
+		&.green-light		{ background-color: @green-light; }
+		&.green-lime		{ background-color: @green-lime; }
+		&.green				{ background-color: @green; }
+		&.blue				{ background-color: @blue; }
+		&.blue-dark			{ background-color: @blue-dark; }
+		&.indigo			{ background-color: @indigo; }
+		&.violet			{ background-color: @violet; }
+		&.cappuccino		{ background-color: @cappuccino; }
+		&.brown				{ background-color: @brown; }
+		&.brown-dark		{ background-color: @brown-dark; }
+		&.gray-light		{ background-color: @gray-light; }
+		&.gray				{ background-color: @gray; }
+		&.gray-dark			{ background-color: @gray-dark; }
+		&.black				{ background-color: @black; }
+		&.white				{ background-color: @white; }
+		
+		&.rounded			{ .border-radius(@baseBorderRadius); }
+	}
+}
+
+
+@media (min-width: 980px)  and (max-width: 1199px) {
+	body#tinymce.wp-editor {
+		.row,
+		.row-fluid {
+			&:before { content: "\f109"; }
+		}
+	}
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+	body#tinymce.wp-editor {
+		.row,
+		.row-fluid {
+			&:before { content: "\f10a"; }
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	body#tinymce.wp-editor {
+		.row,
+		.row-fluid {
+			display: block;
+
+			&:before { content: "\f10b"; }
+			[class*="span"],
+			[class*="span"]:first-child {
+				margin-left: -4px;
+			}
+		}
+	}
+}

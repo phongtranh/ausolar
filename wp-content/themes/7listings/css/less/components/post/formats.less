@@ -1,0 +1,38 @@
+// -------------------------------------------------------------
+// POST formats
+// last edit: 5.3.1
+// -------------------------------------------------------------
+
+
+#content,
+#sidebar,
+#top {
+	.type-post {
+	
+		&[class*="format-"] {
+			> .details .title:before {
+				font-family: FontAwesome;
+				font-size: .75em;
+				margin-right: .5em;
+				line-height: 0;
+			}
+		}
+		//&.format-standard 	.title:before 	{ content: "\f15c"; }
+		&.format-video 		> .details .title:before 	{ content: "\f04b"; }
+		&.format-audio 		> .details .title:before 	{ content: "\f028"; }
+		&.format-image 		> .details .title:before 	{ content: "\f03e"; }
+		&.format-quote 		> .details .title:before 	{ content: "\f10e"; }
+		&.format-link 		> .details .title:before 	{ content: "\f0c1"; }
+		&.format-gallery 	> .details .title:before 	{ content: "\f00a"; }
+		&.format-aside 		> .details .title:before 	{ content: "\f069"; }
+		&.format-status 	> .details .title:before 	{ content: "\f071"; }
+		&.format-chat 		> .details .title:before 	{ content: "\f0e6"; }
+	
+		//&.sticky		.title:before	{ content: "\f08d"; }
+		
+	}
+}
+
+
+
+

@@ -1,0 +1,105 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// CONTACT INFO
+// last edit: 5.4.2
+// --------------------------------------------------
+// --------------------------------------------------
+
+.contact-info {
+	margin-bottom: (@baseLineHeight * 2);
+	line-height: 2.4em;
+
+	.phone,
+	.fax,
+	.website,
+	.email,
+	.address,
+	.tripadvisor {
+		display: block;
+		margin-right: 2em;
+
+		&:before {
+			font-family: "FontAwesome";
+			text-shadow: inherit;
+			position: relative;
+
+			width: 1em;
+			display: inline-block;
+			text-align: center;
+			margin-right: .5em;
+			background: @labelBackgroundColor;
+			padding: 6px;
+			.border-radius(@iconRadius);
+			height: 1em;
+			line-height: 1em;
+			color: @labelTextColor;
+			.textguard(@labelTextColor, @labelBackgroundColor);
+		}
+	}
+
+	.phone:before {
+		content: "\f095";
+	}
+	.fax:before {
+		content: "\f0f6";
+	}
+	.website:before,
+	.tripadvisor:before {
+		content: "\f0c1";
+	}
+	.email:before {
+		content: "\f003";
+	}
+	.address:before {
+		content: "\f041";
+		left: -2.5em;
+		position: absolute;
+	}
+
+	.numbers {
+		line-height: 2.4em;
+	}
+
+	.address {
+		line-height: 1.4em;
+		margin-left: 2.5em;
+		position: relative;
+	}
+	.street,
+	.city,
+	.country {
+		display: block;
+	}
+
+	.tripadvisor {
+		width: 70%;
+		overflow-wrap: break-word;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		height: 2.4em;
+		word-break: break-all;
+	}
+	
+	br {
+		display: none;
+	}
+}
+
+
+// --------------------------------------------------
+// BUSINESS HOURS
+// --------------------------------------------------
+.business-hours {
+
+	.day {
+		display: block;
+	}
+	.label {
+		width: 33%;
+		min-width: 90px;
+		background: none;
+		text-shadow: none;
+		color: mix(@mainBackground, @textColor, 75%);
+		font-size: 1.1em;
+	}
+}

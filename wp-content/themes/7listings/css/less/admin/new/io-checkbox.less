@@ -1,0 +1,54 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// ON/OFF CHECKBOX
+// last edit: 5.8.2
+// --------------------------------------------------
+// --------------------------------------------------
+
+span.checkbox {
+	display: inline-block;
+	margin: 0 0.5em 0 0;
+	line-height: 1.1em;
+	padding: 0;
+	vertical-align: middle;
+	
+	input[type=checkbox] {
+		display: none;
+
+		+ label {
+			display: inline-block;
+			width: 35px!important;
+			height: 22px;
+			line-height: 18px;
+			.border-radius(99px);
+			margin: 0;
+			text-indent: -9999em;
+			
+			background-size: auto 22px;
+			background-repeat: no-repeat;
+			.box-shadow(inset 0 0 0 1px rgba(0,0,0,.1));
+
+			background-position: right center;
+			
+			-webkit-transition: background-position 0.3s ease-in-out, background-color 0.3s ease-in-out;
+			   -moz-transition: background-position 0.3s ease-in-out, background-color 0.3s ease-in-out;
+					transition: background-position 0.3s ease-in-out, background-color 0.3s ease-in-out;
+		}
+		&:checked + label {
+			background-position: left center;
+		}
+	}
+}
+
+
+// FIX - for widget area and featured header
+// --------------------------------------------------
+//#featured-header-settings,
+.sl-admin-widget,
+.modal .advanced-options,
+p > {
+	.checkbox input[type="checkbox"] + label {
+		top: -2px;
+		//position: relative;
+	}
+}

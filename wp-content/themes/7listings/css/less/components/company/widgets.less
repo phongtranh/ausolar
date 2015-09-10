@@ -1,0 +1,49 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// 7 COMPANY widgets
+// last edit: 5.9.2
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+
+// --------------------------------------------------
+// COMPANY SEARCH WIDGET
+// --------------------------------------------------
+.widget_sl-company-search {
+	font-size: 0;
+	
+	input[type="search"] {
+		margin: 0 -1px 0 0;
+		.border-radius(@baseBorderRadius 0 0 @baseBorderRadius);
+		width: 83%;	
+		padding: 5px 10px;
+		font-size: @textSize;
+		height: 2.2em;
+		line-height: 1em;
+		.box-sizing(border-box);
+		
+		background-image: none;
+	}
+	.button {
+		.border-radius(0 @baseBorderRadius @baseBorderRadius 0);
+		width: 17%;	
+		padding: 0 10px;
+		font-size: @textSize;
+		height: 2.2em;
+		line-height: 1em;
+		.box-sizing(border-box);
+		text-indent: -9999em;
+		
+		&:after {
+			font-family: "FontAwesome";
+			position: relative;
+			content: "\f002"; 
+			font-size: 1.3em;
+			display: block;
+			text-indent: 0;
+			top: -0.4em;
+		}
+	}
+}
+

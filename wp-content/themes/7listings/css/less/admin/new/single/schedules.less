@@ -1,0 +1,443 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// SCHEDULES TAB 
+// last edit: 5.8.2
+// --------------------------------------------------
+// --------------------------------------------------
+
+#poststuff .scheduling h2 {
+	margin: 8px 0 14px;
+}
+// COLUMN WIDTHS
+// --------------------------------------------------
+#perm-resource,
+#seas-resource,
+#allo-resource 	{
+	min-width:180px; 
+	width: 25%;
+}
+#perm-price,
+#seas-price,
+#allo-allocation {
+	min-width: 46px; 
+	width: 50px;
+}
+#seas-new-price,
+#perm-new-price,
+#allo-new-allocation {
+	min-width: 76px; 
+	width: 80px; 
+	text-align: right;
+}
+#perm-schedule,
+#seas-schedule,
+#allo-schedule 	{
+	min-width: 79px; 
+	width: 79px;
+}
+
+th#allo-allocation {
+	font-size: 9px;
+}
+
+
+.scheduling {
+
+	> span.input-hint {
+		display: inline-block;
+		margin-bottom: 10px !important;
+		padding: 0;
+		bottom: 0;
+		position: relative;
+	}
+
+	.title {
+		padding-top: 26px!important;
+		
+		&.upsells-title {
+			padding-top: 4px!important;
+		}
+	}
+	
+	> .widefat {
+		background: @wp-LightBackgroundMain;
+		text-shadow: 0 1px 0 rgba(255,255,255,.25);
+		border-bottom: none;
+		margin: 0 0 60px 0;
+		
+		thead th {
+			vertical-align: middle;
+			padding-top: 0;
+			padding-bottom: 0;
+			min-height: 32px;
+			height: 32px;
+			font-size: 13px;
+		}
+		tr td {
+			height: 24px;
+			line-height: 24px;
+			padding: 4px 8px;
+			vertical-align: middle;
+		}
+		
+		input[type="text"], input[type="number"], input[type="email"], input[type="url"], textarea, .add-on {
+			box-shadow: none;
+		}
+
+	}
+	table td:first-child > span {
+		color: @wp-grey;
+	}
+
+	.calendar-big {
+		display: inline-block;
+		vertical-align: middle;
+		
+		&:before {
+			content: "\f508";
+			display: inline-block;
+			-webkit-font-smoothing: antialiased;
+			font: normal 24px/1 'dashicons';
+			vertical-align: top;
+			margin-top: 2px;
+		}
+	}
+	
+	.input-append,
+	.input-prepend {
+		margin: 0;
+	}
+	a.hidden {
+		display: none!important;
+	}
+	
+
+	// Upsells title
+	.upsells-title {
+		cursor: pointer;
+		color: rgba(0, 0, 0, 0.5);
+		background: #EEE;
+		height: 18px!important;
+		line-height: 18px!important;
+		border-bottom: 1px solid #e5e5e5;
+
+		&:hover {
+			color: #000;
+			background: #E2E2E2;
+		}
+
+		// Upsells arrow icon to toggle upsells seasonal & permanant price changes
+		span {
+			margin: -1px 0 0 -7px;
+		}
+	}
+	.upsell {
+		background: #EEE;
+		box-shadow: none;
+		height: 20px!important;
+		line-height: 20px!important;
+		border-top: none;
+		
+		> td {
+			padding: 2px 8px !important;
+			line-height: 14px!important;
+		}
+		
+		.seas-resource > span,
+		.perm-resource > span {
+			padding-left: 15px;
+			line-height: 1.25em!important;
+			display: inline-block;
+		}
+		> .seas-schedule {
+			padding-top: 8px!important;
+		}
+	}
+	
+
+
+
+
+	#seas-new-price,
+	#allo-new-allocation {
+		line-height: 12px;
+		font-size: 90%;
+	}
+	#seas-new-price span,
+	#allo-new-allocation span {
+		font-size: 80%;
+	}
+
+	
+// IO BOXES AND ACTIONS
+// --------------------------------------------------	
+	.seas-schedule {
+		padding-top: 5px !important;
+		padding-bottom: 0px!important;
+	}
+	.perm-schedule {
+		padding-top: 0!important;
+	}
+	.upsell .perm-schedule {
+		padding-top: 0!important;
+	}
+	.perm .checkbox {
+		margin: 0 0 0 25%;
+	}
+	.seas.from-to .checkbox,
+	.allo.from-to .checkbox {
+		margin: 0 0 0 12%;
+	}
+	.allo-schedule {
+		padding-top: 8px!important;
+	}
+	
+
+// SCHEDULE PRICE
+// --------------------------------------------------
+
+	.perm-resource.title,
+	.seas-resource.title,
+	.allo-resource.title {
+		height: 32px;
+		line-height: 32px;
+		background: rgba(255,255,255, .7);
+		border-bottom: 1px solid rgba(0,0,0,.075);
+		color: @wp-grey;
+		font-size: 1.1em;
+	}
+	.widefat {
+		#perm-price,
+		.perm-price,
+		#seas-price,
+		.seas-price,
+		#allo-allocation,
+		.allo-allocation {
+			text-align: right;
+			padding-right: 10px;
+		}
+	}
+	.price {
+		width: 60px;
+		margin: 0px;
+	}
+
+	#perm-change-date,
+	.perm-change-date,
+	#perm-schedule,
+	.perm-schedule,
+	#seas-from,
+	.seas-from,
+	#seas-schedule,
+	.seas-schedule,
+	#allo-from,
+	.allo-from,
+	#allo-schedule,
+	.allo-schedule {
+		border-left: 1px solid rgba(0, 0, 0, .18);
+	}
+	
+	.perm-change-date,
+	.perm-new-price,
+	.seas-from,
+	.seas-to,
+	.seas-fixed,
+	.seas-percentage,
+	.seas-new-price,
+	.allo-from,
+	.allo-to,
+	.allo-new-allocation {
+		.row-highlight (@wp-blue-light);
+
+		input {
+			border: 1px solid @wp-grey;
+		}
+	}
+	
+	.seas-resource,
+	.seas-price,
+	.seas-schedule,
+	.perm-resource,
+	.perm-price,
+	.perm-schedule,
+	.allo-resource,
+	.allo-allocation,
+	.allo-schedule {
+		.row-highlight (@wp-blue-slight);
+	}
+	// Colours overwritten in WP styles
+	
+	.seas-new-price {
+		font-family: @sansFontFamily;
+		text-align: right;
+		font-weight: bold;
+		//font-size: 0.9em!important;
+	}
+	#perm-change-date,
+	.perm-change-date, {
+		text-align: center;
+	}
+	.dashicons.dashicons-admin-users {
+		margin: -2px -3px 0 -3px;
+	}
+	
+	
+// ALERTS
+// --------------------------------------------------
+	.alert {
+		margin: 7px 0;
+		line-height: 1.4em;
+		max-width: 480px;
+	}
+	
+	.datepicker {
+		width: 120px;
+		text-align: center;
+	}
+
+
+	.perm-new-price input[type=text],
+	.seas-fixed input[type=text] {
+		width: 50px;
+		text-align: right;
+	}
+	.seas-percentage input,
+	.allo-new-allocation input {
+		width: @input-tiny;
+		text-align: right;
+	}
+	.perm-new-price,
+	.allo-new-allocation {
+		.input-prepend,
+		.input-append { float: right; }
+	}
+
+	#seas-new-price > span,
+	#allo-new-allocation > span {
+		font-size: 10px;
+		color: @wp-grey;
+		.text-shadow-emboss;
+		font-weight: bold;
+	}
+	.seas-schedule,
+	.allo-schedule {
+		.checkbox {
+			top: -5px;
+			position: relative;
+			margin: 0 6px 0 0;
+		}
+	}
+	.add-md,
+	.delete-md {
+		font-size: 24px;
+		display: inline-block;
+		top: -3px;
+		position: relative;
+		color: rgba(0,0,0,.2);
+		
+		&:hover {
+			color: rgba(0,0,0,.5);
+		}
+	}
+	.delete-md:hover,
+	.delete-md:hover:before {
+		color: @wp-red-delete-hover;
+	}
+	.delete-md.delete-schedule {
+		color: #fff;
+		text-shadow: 0 0 1px rgba(0,0,0,.4);
+		
+		&:hover {
+			text-shadow: none;
+		}
+	}
+	
+	
+// DISABLED ROWS
+// --------------------------------------------------	
+	.disabled {
+		&:hover {
+			background-color: @wp-blue-ulight;
+		}
+
+		.seas-new-price span {
+			opacity: .4;
+		}
+		
+		#perm-change-date,
+		.perm-change-date,
+		#perm-schedule,
+		.perm-schedule,
+		#seas-from,
+		.seas-from,
+		#seas-schedule,
+		.seas-schedule,
+		#allo-from,
+		.allo-from,
+		#allo-schedule,
+		.allo-schedule {
+			border-left: 1px solid rgba(0, 0, 0, .05);
+		}
+			
+		.perm-change-date,
+		.perm-new-price,
+		.seas-from,
+		.seas-to,
+		.seas-fixed,
+		.seas-percentage,
+		.seas-new-price,
+		.allo-from,
+		.allo-to,
+		.allo-new-allocation {
+			background-color: @no-color;
+			
+			input {
+				border: 1px solid @wp-grey-light;
+			}
+		}
+		.seas-resource,
+		.seas-price,
+		.seas-schedule,
+		.perm-resource,
+		.perm-price,
+		.perm-schedule,
+		.allo-resource,
+		.allo-allocation,
+		.allo-schedule {
+			background-color: @no-color;
+		}
+		input[type=text] {
+			-moz-opacity: 0.5;
+			-webkit-opacity: 0.5;
+			opacity: 0.5;
+		}
+		.calendar-big {
+			-moz-opacity: 0.2;
+			-webkit-opacity: 0.2;
+			opacity: 0.2;
+		}
+		.perm-new-price,
+		.seas-fixed {
+			color: @wp-grey-light;
+		}
+		input:focus {
+			opacity: 1;
+		}
+	}
+	
+	
+	
+	.add-on {
+		font-family: @sansFontFamily;
+	}
+	
+} // END .scheduling
+
+
+
+.secondary .seas-resource span,
+.secondary .seas-price span,
+.secondary .allo-resource span {
+	display: none;
+}
+

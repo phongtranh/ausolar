@@ -1,0 +1,40 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// PLUGIN CORRECTIONS
+// last edit: 5.3
+// --------------------------------------------------
+// --------------------------------------------------
+
+
+
+
+// YOAST HIDE ADS
+// --------------------------------------------------
+.wpseo_content_wrapper #sidebar-container {
+	display: none;
+}
+
+
+// 7 Compatibility Plugin
+// hide disabled widgets
+// ------------------------------
+#widget-list {
+	[id*="sl-locations-"],
+	[id*="sl-posts-"],
+	[id*="sl-post-slider-"],
+	[id*="sl-tours-"],
+	[id*="sl-tour-"] {
+		display: none!important;
+	}
+}
+
+
+
+// for 
+// 7 Listing Sharing
+// 7 Tour Bundles
+//
+// Hide component tour that is not shared, but part of a tour bundle
+.wp-list-table.tours .status-draft.shared-to {
+	display: none;
+}

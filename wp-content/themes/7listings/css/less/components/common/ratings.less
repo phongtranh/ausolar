@@ -1,0 +1,86 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// RATINGS
+// last edit: 5.0
+// --------------------------------------------------
+// --------------------------------------------------
+
+.stars,
+.star-rating {
+	overflow: hidden;
+	position: relative;
+	height: 1em;
+	line-height: 1em;
+	font-size: 1em;
+	width: 5em;
+	font-family: FontAwesome;
+	display: inline-block;
+
+	a,
+	span {
+		overflow: hidden;
+		float: left;
+		text-align: left;
+		top: 0;
+		left: 0;
+		position: absolute;
+		text-indent: -9999em;
+//		padding-top: 1.5em;
+
+		//letter-spacing: 0.1em;
+	}
+	a:hover:before,
+	.active:before,
+	span:before {
+		top: 0;
+		position: absolute;
+		left: 0;
+		text-indent: 0;
+
+		//letter-spacing: 0.1em;
+//		padding: .5em;
+		.box-sizing(content-box);
+
+		color: @reviewRatingColor;
+	}
+
+	.star-0 { width: 0;   z-index: 10; }
+	.star-1 { width: 1em; z-index: 9;  }
+	.star-2 { width: 2em; z-index: 8;  }
+	.star-3 { width: 3em; z-index: 7;  }
+	.star-4 { width: 4em; z-index: 6;  }
+	.star-5 { width: 5em; z-index: 5;  }
+
+	&:before {
+		content: "@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}@{reviewRatingBackgroundIcon}";
+		float: left;
+		top: 0;
+		left: 0;
+		position: absolute;
+		color: rgba(0,0,0,.1);
+
+		//letter-spacing: 0.1em;
+	}
+
+	.star-1:before { content: "@{reviewRatingIcon}"; }
+	.star-2:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}"; }
+	.star-3:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}"; }
+	.star-4:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}"; }
+	.star-5:before,
+	a:hover:before,
+	.active:before,
+	span:before { content: "@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}@{reviewRatingIcon}"; }
+
+	// --------------------------------------------------
+	// HOTEL STAR RATING
+	// --------------------------------------------------
+	&.hotel {
+		&:before       { content: "\f006\f006\f006\f006\f006"; color: transparent; }
+		.star-1:before { content: "\f005";                     }
+		.star-2:before { content: "\f005\f005";                }
+		.star-3:before { content: "\f005\f005\f005";           }
+		.star-4:before { content: "\f005\f005\f005\f005";      }
+		.star-5:before { content: "\f005\f005\f005\f005\f005"; }
+		.active:before { color: @starRatingColor;              }
+	}
+}

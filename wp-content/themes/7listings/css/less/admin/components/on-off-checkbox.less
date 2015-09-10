@@ -1,0 +1,72 @@
+// --------------------------------------------------
+// --------------------------------------------------
+// ON/OFF CHECKBOX
+// last edit: 4.16
+// --------------------------------------------------
+// --------------------------------------------------
+
+span.checkbox {
+	display: inline-block;
+	width: 48px;
+	height: 18px;
+	overflow: hidden;
+	border-radius: 99px;
+	margin: 5px 6px -5px 0;
+	box-shadow: 0 1px 0 #FFF;
+	padding: 0;
+	min-height: 18px;
+
+	input[type=checkbox] {
+		display: none;
+
+		+ label {
+			text-indent: -9999em;
+			display: inline-block;
+			width: 48px;
+			height: 18px;
+			line-height: 18px;
+			border-radius: 99px;
+			margin: 0;
+
+			background-color: #888888;
+
+			background: transparent url("@{imagePath}admin/buttons/check-slider.png") no-repeat -30px center;
+			-webkit-transition: background-position 0.3s ease-in-out;
+			   -moz-transition: background-position 0.3s ease-in-out;
+					transition: background-position 0.3s ease-in-out;
+		}
+		&:checked + label {
+			background-position: left center;
+			background-color: #2ea2cc;
+		}
+	}
+}
+
+
+
+
+// HiDPI Displays
+// --------------------------------------------------
+@media print,
+  (-o-min-device-pixel-ratio: 5/4),
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 120dpi) {
+	.checkbox input[type=checkbox] + label {
+		background-image: url("@{imagePath}admin/buttons/check-slider-2x.png");
+		background-size: 78px 18px;
+	}
+  }
+
+
+
+// FIX - for widget area and featured header
+// --------------------------------------------------
+//#featured-header-settings,
+.sl-admin-widget,
+.modal .advanced-options/*,
+p > */{
+	.checkbox input[type="checkbox"] + label {
+		top: -2px;
+		position: relative;
+	}
+}

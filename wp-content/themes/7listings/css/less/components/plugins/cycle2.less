@@ -1,0 +1,151 @@
+// -------------------------------------
+// -------------------------------------
+// jQuery Cycle 2 styles
+// Single post galleries
+//
+// last edit: 5.8.3
+// -------------------------------------
+// -------------------------------------
+
+#slider {
+	//margin-bottom: (@baseLineHeight * 2);
+	
+	.thumbnail.cycle-slide {
+		width: 100%;
+		margin-bottom: (@baseLineHeight / 2);
+		
+		img {
+			.max-radius(40px); // to limit it to thumbnail size
+		}
+	}
+	.cycle-caption { 
+		text-align: center;
+		margin: 0 0 @baseLineHeight 0;
+		color: fade(@textColor, 75%);
+		min-height: 1em;
+		line-height: 1em;
+	}
+
+	.cycle-pager {
+		.thumbnail {
+			.box-sizing(border-box);
+			
+			margin: 0 1% 1% 0;
+			width: 13.429%;
+
+			
+			&:nth-child(7n) {
+				margin-right: 0;
+			}
+			
+			@media (min-width: 980px) and (max-width: 1199px) {
+				margin: 0 1.5% 1.5% 0;
+				width: 15.417%;
+				
+				&:nth-child(6n) {
+					margin-right: 0;
+				}
+				&:nth-child(7n) {
+					margin-right: 1.5%;
+				}
+			}
+			@media (min-width: 768px) and (max-width: 979px) {
+				width: 19.2%;
+				
+				&:nth-child(5n) {
+					margin-right: 0;
+				}
+				&:nth-child(6n),
+				&:nth-child(7n) {
+					margin-right: 1%;
+				}
+			}
+			@media (max-width: 400px) {
+				margin: 0 2% 2% 0;
+				width: 18.4%;
+				
+				&:nth-child(5n) {
+					margin-right: 0;
+				}
+				&:nth-child(6n),
+				&:nth-child(7n) {
+					margin-right: 2%;
+				}
+			}
+		// With Sidebars	
+			.left &,
+			.right & {
+				width: 15.833%;
+				
+				&:nth-child(6n) {
+					margin-right: 0;
+				}
+				&:nth-child(7n) {
+					margin-right: 1%;
+				}
+				
+				@media (min-width: 980px) and (max-width: 1199px) {
+					margin: 0 1.5% 1.5% 0;
+					width: 18.8%;
+					
+					&:nth-child(5n) {
+						margin-right: 0;
+					}
+					&:nth-child(6n),
+					&:nth-child(7n) {
+						margin-right: 1.5%;
+					}
+				}
+				@media (min-width: 768px) and (max-width: 979px) {
+					margin: 0 2% 2% 0;
+					width: 23.5%;
+					
+					&:nth-child(4n) {
+						margin-right: 0;
+					}
+					&:nth-child(5n),
+					&:nth-child(6n),
+					&:nth-child(7n) {
+						margin-right: 2%;
+					}
+				}
+				@media (max-width: 400px) {
+					margin: 0 2% 2% 0;
+					width: 18.4%;
+					
+					&:nth-child(5n) {
+						margin-right: 0;
+					}
+					&:nth-child(4n),
+					&:nth-child(6n),
+					&:nth-child(7n) {
+						margin-right: 2%;
+					}
+				}
+			}
+			
+			.opacity(50);
+			.transition(all ease-in-out .2s);
+			position: relative;
+			top: 0;
+			
+			&.cycle-pager-active,
+			&:hover {
+				.opacity(100);
+				cursor: pointer;
+			}
+			/* popup effect
+			> img {
+				.transition(all ease-in-out .2s);
+				position: relative;
+				top: 0;
+			
+				&:hover {
+					top: -2px;	
+					.box-shadow(0 4px 6px -3px rgba(0,0,0,0.6));
+				}
+			}
+			*/
+		}
+	}
+}

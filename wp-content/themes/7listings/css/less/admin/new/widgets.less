@@ -1,0 +1,96 @@
+// --------------------------------------------
+// SETTING FOR WIDGETS
+// last edit: 5.9.2
+// --------------------------------------------
+
+.widget {
+//.sl-admin-widget {
+	
+	.title .widget-title {
+		padding: 1em .6em;
+		font-size: 1.5em;
+	}
+	.widget-content,
+	.widget-control-actions {
+		.clearfix();
+	}
+	
+	select,
+	input[type="text"] {
+		width: 100%;
+		margin: 0;
+	}
+	.sl-settings {
+		margin: .5em 0;
+
+		.sl-label {
+			width: 45%;
+			display: inline-block;
+
+			label {
+				font-size: 13px;
+				font-weight: normal;
+				height: 20px;
+				line-height: 20px;
+			}
+		}
+		.sl-input {
+			display: inline-block;
+			width: 53%;
+			
+			&.sl-fullwidth {
+				width: 100%;
+				
+				textarea {
+					min-height: 100px;
+				}
+			}
+			
+			.wp-picker-container {
+				input[type="text"] {
+					width: 65px;
+					vertical-align: bottom;
+				}
+			}
+			.input-append,
+			.input-prepend {
+				input[type="number"] {
+				//input[type="email"],
+				//input[type="text"] {
+					width: 54px;
+				}
+			}
+			.sl-input-small {
+				width: 50%;
+			}
+		}
+
+		&.title,
+		&.single-listing {
+			.sl-input {
+				display: block;
+				width: 100%;
+				margin-bottom: 1.5em;
+			}
+		}
+	}
+	.sl-sub-settings {
+		margin: -0.25em 0 1em 0;
+
+		.sl-label {
+			label {
+				font-size: 12px;
+			}
+		}
+		.sl-settings {
+			margin: .25em 0;
+		}
+		
+		&.filter-parameters {
+			margin: 1em 0;
+		}
+	}
+	br {
+		display: none;
+	}
+}

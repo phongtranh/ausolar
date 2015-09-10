@@ -1,0 +1,41 @@
+// --------------------------------------------
+// WooCommerce Product Bundles
+// last edit: 5.6.6
+// --------------------------------------------
+
+.bundled_product {
+	clear: none;
+	margin: 0 0 @baseLineHeight 0;
+	padding: 0;
+	display: block;
+	
+	.product_title {
+		font-size: (@h4Size * .9);
+	}
+	
+	.bundled_product_images {
+		float: left;
+		margin: 0 10px 0 0;
+		
+		.thumbnail {
+			width: 40px;
+		}
+	}
+	
+	.details {
+		display: table;
+		
+		.product_excerpt {
+			font-size: .9em;
+		}
+		.cart {
+			margin: 0;
+			display: none;
+		}
+	}
+	
+	&:last-of-type {
+		margin: 0;
+	}
+	//.clearfix();
+}
